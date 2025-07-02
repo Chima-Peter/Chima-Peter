@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 👋 Hi, I'm Chima Peter Ojimma
 
-## Getting Started
+### 👨‍💻 Full Stack Developer | 🧠 CS Major | 🌍 Based in Nigeria
 
-First, run the development server:
+I'm a passionate developer building robust web applications with modern technologies like *Next.js, React, Node.js*, and *PostgreSQL*. I’m particularly interested in:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- ⚙ Building scalable, offline-first PWAs
+- 🏪 E-commerce, Inventory & Order Management Systems
+- 🍔 Food ordering and hotel booking platforms
+- 🔐 Web3 security & blockchain-based applications
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- *Frontend:* Next.js, React, Tailwind CSS, Framer Motion, TypeScript, React Native
+- *Backend:* Node.js, Express, PostgreSQL, Prisma, Python, FastAPI, Django
+- *Dev Tools:* Git, GitHub, Vercel, Figma
+- *Other:* REST APIs, Offline Support (PWA), Web Scraping
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 My Recent Projects
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🛍 [Melch](https://melch-user.vercel.app/)
+> *Melch* is a modern e-commerce store with a sleek frontend. Users can explore product categories, view detailed product pages, and interact with a responsive shopping experience. Built with performance and usability in mind.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 🔐 [Chain Security](https://chain-security-rosy.vercel.app/)
+> A tech company and platform addressing Web3 risk. Features talks at major industry events, and support for blockchain investigations and fraud analysis.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 💪 [FitGuru](https://chima-peter.github.io/FitGuru/)
+> A fitness website for a gym. Allows clients to view gym plans, schedule sessions, and leave reviews.
+
+---
+
+### 😴 [Yawnsworld](https://chima-peter.github.io/yawnsworld/)
+> The official Web3 site for the memecoin *YAWN*. Enables users to learn about the token and purchase it directly from the platform.
+
+---
+
+### 🍽 [Bistro Bliss](https://chima-peter.github.io/Bistro-Bliss/)
+> A responsive restaurant website with a modern UI. Showcases menus, specials, and reservations. Built using React, Tailwind CSS, and TypeScript.
+
+---
+
+
+## 🚀 Ongoing Projects
+
+Here are a few things I’ve been working on:
+
+- 🍽 [Food Order Platform](#): Seamless menu browsing + live status tracking
+- 🛒 [E-commerce Inventory System](#): Real-time stock tracking + order management
+
+
+---
+
+## 📈 GitHub Stats
+
+![Chima's GitHub stats](https://github-readme-stats.vercel.app/api?username=Chima-Peter&show_icons=true&theme=radical)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Chima-Peter&layout=compact&theme=radical)
+
+---
+
+## 📬 Let's Connect
+
+- 📫 Email: chimaojimma@gmail.com
+- 💼 [LinkedIn](https://www.linkedin.com/in/chimaojimma)
+- 🐦 [Twitter](https://twitter.com/he_mobs)
+
+---
+
+Always building. Always learning.

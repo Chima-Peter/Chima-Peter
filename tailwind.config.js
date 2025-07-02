@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sen: "openSans(--open-sans)",
+        sen: "var(--font-sen)",
       }
     },
     screens: {

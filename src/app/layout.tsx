@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Sen } from "next/font/google";
 import "./globals.css";
 
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
+const sen = Sen({
+  variable: "--font-sen",
   subsets: ["latin"],
 });
 
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${openSans.variable}`}>
+      <body className={`${sen.variable}`}>
         {children}
       </body>
     </html>
