@@ -46,14 +46,14 @@ export const metadata: Metadata = {
     creator: "@he_mobs",
   },
   icons: {
-    icon: "/icon.jpg",
-    apple: "/icon.jpg",
-    shortcut: "/icon.jpg",
+    icon: "/display_icon.png",
+    apple: "/display_icon.png",
+    shortcut: "/display_icon.png",
     other: [
       {
         rel: "mask-icon",
-        url: "/icon.jpg",
-        color: "#080E0B",
+        url: "/display_icon.png",
+        color: "#ffffff"
       },
     ],
   },
