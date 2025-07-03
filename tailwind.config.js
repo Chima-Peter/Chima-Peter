@@ -8,6 +8,9 @@ export default {
     extend: {
       fontFamily: {
         sen: "var(--font-sen)",
+      },
+      backgroundImage: {
+        'background': "url('/background.png')",
       }
     },
     screens: {

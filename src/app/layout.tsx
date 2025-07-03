@@ -91,8 +91,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${sen.variable}`}>
+    <html lang="en" className="flex bg-background justify-center w-[100%] bg-[#00093d] z-10">
+      <body className={`${sen.variable} max-w-[1440px] w-[100%] font-sen`}>
         {children}
       </body>
       <Analytics />
