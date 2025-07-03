@@ -1,4 +1,5 @@
 # 👋 Hi, I'm Chima Peter Ojimma
+[🌐 chima-peter.vercel.app](https://chima-peter.vercel.app/)
 
 ### 👨‍💻 Full Stack Developer | 🧠 CS Major | 🌍 Based in Nigeria
 
@@ -67,6 +68,7 @@ Here are a few things I’ve been working on:
 
 ## 📬 Let's Connect
 
+- 🌐 [Portfolio Website](https://chima-peter.vercel.app/)
 - 📫 Email: chimaojimma@gmail.com
 - 💼 [LinkedIn](https://www.linkedin.com/in/chimaojimma)
 - 🐦 [Twitter](https://twitter.com/he_mobs)
