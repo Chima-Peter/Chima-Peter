@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Sen } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
+import Footer from "@/components/navigation/footer";
 
 
 const sen = Sen({
@@ -10,7 +11,7 @@ const sen = Sen({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#00093d",
   width: "device-width",
   initialScale: 1,
 };
@@ -95,6 +96,7 @@ export default function RootLayout({
       <body className={`${sen.variable} max-w-[1440px] w-[100%] font-sen`}>
         {children}
       </body>
+      <Footer />
       <Analytics />
     </html>
   );
