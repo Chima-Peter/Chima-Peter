@@ -40,8 +40,8 @@ const ToolsList = () => {
             initial="hidden"
             whileInView="visible">
             {
-                toolList.map((tool) => (
-                    <ToolsTemplate {...tool} key={tool.tool} />
+                toolList.map((tool, index) => (
+                    <ToolsTemplate {...tool} key={index} />
                 ))
             }
         </motion.ul>

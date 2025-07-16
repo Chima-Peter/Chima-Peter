@@ -11,6 +11,12 @@ const WorksList = () => {
         //     link: "https://quickeats.vercel.app",
         // },
         {
+            name: "Tales of Logistics",
+            description: "A responsive and modern logistics platform designed to capture stories from industry professionals, and drive user engagement through clean navigation and strategic call-to-actions.",
+            image: "/tales_of_logistics.png",
+            link: "https://talesoflogistics.com", // replace with your actual project link
+        },
+        {
             name: "Melch - User Side",
             description: "A sleek and responsive eCommerce platform that allows users to browse products, manage their cart, and complete secure checkouts.",
             image: "/melch_user.png",
@@ -21,6 +27,18 @@ const WorksList = () => {
             description: "A vendor dashboard that empowers sellers to manage their inventory, view sales analytics, handle orders, and respond to customer inquiries.",
             image: "/melch_vendor.png",
             link: "https://melch-vendor.vercel.app/",
+        },
+        {
+            name: "FitGuru",
+            description: "A fitness website for a gym. Allows clients to view gym plans, schedule sessions, and leave reviews.",
+            image: "/fitguru.png",
+            link: "https://chima-peter.github.io/FitGuru/"
+        },
+        {
+            name: "YawnsWorld",
+            description: "The official Web3 site for the memecoin YAWN. Enables users to learn about the token and purchase it directly from the platform.",
+            image: "/yawnsworld.png",
+            link: "https://chima-peter.github.io/yawnsworld/"
         },
         {
             name: "Core AI",
@@ -34,18 +52,6 @@ const WorksList = () => {
             image: "/chainsecurity.png",
             link: "https://chain-security-rosy.vercel.app/",
         },
-        {
-            name: "FitGuru",
-            description: "A fitness website for a gym. Allows clients to view gym plans, schedule sessions, and leave reviews.",
-            image: "/fitguru.png",
-            link: "https://chima-peter.github.io/FitGuru/"
-        },
-        {
-            name: "YawnsWorld",
-            description: "The official Web3 site for the memecoin YAWN. Enables users to learn about the token and purchase it directly from the platform.",
-            image: "/yawnsworld.png",
-            link: "https://chima-peter.github.io/yawnsworld/"
-        }
     ];
 
 
@@ -56,8 +62,8 @@ const WorksList = () => {
             initial="hidden"
             whileInView="visible">
             {
-                projects.map((work) => (
-                    <WorkTemplate {...work} key={work.name} />
+                projects.map((work, index) => (
+                    <WorkTemplate {...work} key={index} />
                 ))
             }
         </motion.ul>

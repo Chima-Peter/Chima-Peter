@@ -119,8 +119,8 @@ const SkillsList = () => {
                 initial="hidden"
                 whileInView="visible">
                 {
-                    selectedBox.map((box) => (
-                        <SkillTemplate {...box} key={box.name} />
+                    selectedBox.map((box,index) => (
+                        <SkillTemplate {...box} key={index} />
                     ))
                 }
             </motion.ul>

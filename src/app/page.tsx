@@ -10,14 +10,12 @@ import SkillsList from "@/components/home/skills_list"
 import WorksList from "@/components/home/works_list"
 
 
-// bg-gradient-to-b from-black via-[#060022] to-[#00093d]
-
 
 const HomePage = () => {
     return (
         <main className="w-[100%] font-sen gap-12">
             <motion.section
-                className="w-[100%] relative flex items-center justify-center py-16 md:py-20 lg:py-24 h-screen flex-col gap-4"
+                className="w-[100%] relative flex items-center justify-center py-16 md:py-20 lg:py-24 h-screen flex-col gap-4 xl:max-h-[550px]"
                 variants={parentVariant}
                 initial="hidden"
                 whileInView="visible"
@@ -49,7 +47,8 @@ const HomePage = () => {
             </motion.section>
 
             <motion.section
-                className="flex flex-col w-[100%] bg-gradient-to-b from-black via-[#060022] to-[#00093d] items-center justify-center px-4 md:px-6 lg:px-8 gap-8"
+                className="flex flex-col w-[100%] bg-gradient-to-b from-black via-[#060022] to-[#00093d] items-center justify-center px-4 md:px-6 py-24 lg:px-8 gap-8"
+                id="why-hire-me"
                 variants={parentVariant}
                 initial="hidden"
                 whileInView="visible"
@@ -87,13 +86,17 @@ const HomePage = () => {
                 whileInView="visible"
             >
                 <div className="flex flex-col gap-6 items-center justify-center">
-                    <motion.h2 variants={childVariant} className="text-4xl sm:text-5xl text-transparent bg-gradient-to-r from-[#3c50ff] via-[#8a3ffc] to-[#ff38d4] mb-3 bg-clip-text font-bold text-center uppercase w-fit">
+                    <motion.h2 variants={childVariant}
+                    id="tools" 
+                    className="text-4xl sm:text-5xl text-transparent bg-gradient-to-r from-[#3c50ff] via-[#8a3ffc] to-[#ff38d4] mb-3 bg-clip-text font-bold text-center uppercase w-fit">
                         Tools
                     </motion.h2>
                     <ToolsList />
                 </div>
                 <div className="flex flex-col gap-6 items-center justify-center mt-4">
-                    <motion.h2 variants={childVariant} className="text-4xl sm:text-5xl text-transparent bg-gradient-to-r from-[#3c50ff] via-[#8a3ffc] to-[#ff38d4] mb-3 bg-clip-text font-bold text-center uppercase w-fit">
+                    <motion.h2 variants={childVariant}
+                    id="skills" 
+                    className="text-4xl sm:text-5xl text-transparent bg-gradient-to-r from-[#3c50ff] via-[#8a3ffc] to-[#ff38d4] mb-3 bg-clip-text font-bold text-center uppercase w-fit">
                         Skills
                     </motion.h2>
                     <SkillsList />
@@ -102,6 +105,7 @@ const HomePage = () => {
 
             <motion.section
                 className="flex flex-col w-[100%] bg-gradient-to-b from-black via-[#060022] to-black items-center justify-center px-4 md:px-6 lg:px-8 gap-0 pt-16 pb-12"
+                id="my-works"
                 variants={parentVariant}
                 initial="hidden"
                 whileInView="visible"

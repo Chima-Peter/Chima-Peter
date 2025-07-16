@@ -13,7 +13,7 @@ const StatBlock = () => {
     <div className="flex gap-4 flex-wrap mt-4 w-[100%] lg:justify-normal justify-center">
         {stats.map((stat, i) => (
         <motion.div
-            key={stat.label}
+            key={i}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ y: -10 }}

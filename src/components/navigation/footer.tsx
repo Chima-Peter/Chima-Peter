@@ -33,8 +33,8 @@ const Footer = () => {
         <footer className="bg-black flex w-[100%] pt-24 pb-12 items-center justify-center flex-col gap-6">
             <div className="flex items-center justify-center w-[100%] gap-6 flex-wrap">
                 {
-                    socialMediaLinks.map((media) =>(
-                        <Link href={media.link} key={media.link}>
+                    socialMediaLinks.map((media, index) =>(
+                        <Link href={media.link} key={index}>
                             {media.icon}
                         </Link>
                     ))

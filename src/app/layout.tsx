@@ -3,6 +3,7 @@ import { Sen } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
 import Footer from "@/components/navigation/footer";
+import ExportNav from "@/components/navigation/export_nav";
 
 
 const sen = Sen({
@@ -93,10 +94,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="flex bg-background justify-center w-[100%] bg-[#00093d] z-10">
-      <body className={`${sen.variable} max-w-[1440px] w-[100%] font-sen`}>
+      <body className={`${sen.variable} max-w-[1440px] w-[100%] font-sen relative`}>
+        <ExportNav />
         {children}
+        <Footer />
       </body>
-      <Footer />
       <Analytics />
     </html>
   );
