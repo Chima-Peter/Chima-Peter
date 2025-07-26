@@ -59,13 +59,6 @@ Here are a few things I’ve been working on:
 
 ---
 
-## 📈 GitHub Stats
-
-![Chima's GitHub stats](https://github-readme-stats.vercel.app/api?username=Chima-Peter&show_icons=true&theme=radical)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Chima-Peter&layout=compact&theme=radical)
-
----
-
 ## 📬 Let's Connect
 
 - 🌐 [Portfolio Website](https://chima-peter.vercel.app/)
