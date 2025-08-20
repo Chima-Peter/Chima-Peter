@@ -3,7 +3,7 @@
 
 ### 👨‍💻 Full Stack Developer | 🧠 CS Major | 🌍 Based in Nigeria
 
-I'm a passionate developer building robust web applications with modern technologies like *Next.js, React, Node.js*, and *PostgreSQL*. I’m particularly interested in:
+I'm a passionate developer building robust web applications with modern technologies like *Next.js, React, Node.js, Nest.JS*, and *PostgreSQL*. I’m particularly interested in:
 
 - ⚙ Building scalable, offline-first PWAs
 - 🏪 E-commerce, Inventory & Order Management Systems
