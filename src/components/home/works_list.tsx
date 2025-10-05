@@ -12,7 +12,7 @@ const WorksList = () => {
         },  
       {
             name: "QuickEats",
-            description: "A multi-tenant food ordering platform built with Next.js, Prisma, and PostgreSQL. Features real-time order tracking and role-based access for vendors and users.",
+            description: "QuickEats is a multi-tenant food delivery platform designed to help small and medium-sized restaurants manage their own online ordering systems under a shared parent infrastructure.",
             image: "/projects/quickeats.png",
             link: "https://quickeats.vercel.app",
         },
