@@ -7,14 +7,14 @@ const WorksList = () => {
        {
             name: "ManomPay",
             description: "ManomPay is an all-in-one fintech platform designed to streamline financial operations for small to medium sized businesses, freelancers and entrepreneurs.",
-            image: "/projects/manompay.png",
+            image: "/manompay.png",
             link: "https://manomsolutions.com/",
         },  
       {
             name: "QuickEats",
             description: "QuickEats is a multi-tenant food delivery platform designed to help small and medium-sized restaurants manage their own online ordering systems under a shared parent infrastructure.",
-            image: "/projects/quickeats.png",
-            link: "https://quickeats.vercel.app",
+            image: "/quickeats.png",
+            link: "https://quick-eats-rho.vercel.app",
         },
         {
             name: "Tales of Logistics",
