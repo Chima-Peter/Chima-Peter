@@ -2,14 +2,20 @@ import { motion } from "framer-motion";
 import { parentVariant } from "../variants";
 import WorkTemplate from "./work_template";
 
-const WorksList = () => {
+const WorksList = () => { 
     const projects = [
-        // {
-        //     name: "QuickEats",
-        //     description: "A multi-tenant food ordering platform built with Next.js, Prisma, and PostgreSQL. Features real-time order tracking and role-based access for vendors and users.",
-        //     image: "/projects/quickeats.png",
-        //     link: "https://quickeats.vercel.app",
-        // },
+       {
+            name: "ManomPay",
+            description: "ManomPay is an all-in-one fintech platform designed to streamline financial operations for small to medium sized businesses, freelancers and entrepreneurs.",
+            image: "/projects/manompay.png",
+            link: "https://manomsolutions.com/",
+        },  
+      {
+            name: "QuickEats",
+            description: "A multi-tenant food ordering platform built with Next.js, Prisma, and PostgreSQL. Features real-time order tracking and role-based access for vendors and users.",
+            image: "/projects/quickeats.png",
+            link: "https://quickeats.vercel.app",
+        },
         {
             name: "Tales of Logistics",
             description: "A responsive and modern logistics platform designed to capture stories from industry professionals, and drive user engagement through clean navigation and strategic call-to-actions.",
