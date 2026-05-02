@@ -1,63 +1,37 @@
-<div align="center">
-
 # Chima Peter Ojimma
 
-**Senior Full-Stack Engineer**
+**Software Engineer** — Building production systems with real-time data pipelines, AI orchestration, and enterprise SaaS.
 
-Building production-grade systems with real-time data pipelines, AI orchestration, and enterprise SaaS platforms.
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-chima--peter.vercel.app-000?style=for-the-badge&logo=vercel&logoColor=white)](https://chima-peter.vercel.app/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-chimaojimma-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chimaojimma)
-[![Email](https://img.shields.io/badge/Email-chimaojimma%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:chimaojimma@gmail.com)
-
-</div>
+[Portfolio](https://chima-peter.vercel.app/) · [LinkedIn](https://linkedin.com/in/chimaojimma) · [chimaojimma@gmail.com](mailto:chimaojimma@gmail.com)
 
 ---
 
 ## Tech Stack
 
-<div align="center">
-
-#### Languages & Core
-
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-#### Frontend
-
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000?style=for-the-badge&logo=next.js&logoColor=white)
-![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-
-#### Backend
-
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-
-#### AI & Data
-
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
-![Google Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
-
-#### Database & Infrastructure
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white)
-![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=for-the-badge&logo=neo4j&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
-
-</div>
+**Languages:** TypeScript, Python, JavaScript  
+**Frontend:** React, Next.js, Vue 3, Tailwind CSS  
+**Backend:** FastAPI, NestJS, Node.js, Django, Express  
+**AI/ML:** LangChain, LangGraph, OpenAI, Gemini, Groq, Mistral  
+**Data:** PostgreSQL, Redis, Supabase, Neo4j, Prisma  
+**Infrastructure:** Docker, AWS, Celery, Pulumi
 
 ---
 
 ## Featured Projects
+
+<details open>
+<summary><b>Enterprise SaaS & Backend</b></summary>
+
+<br>
+
+| Project | Description | Stack |
+|---------|-------------|-------|
+| **System Manager API** | Core backend for a multi-tenant enterprise platform handling organization management, user authentication, and cross-service coordination. Built on FastAPI with async PostgreSQL (asyncpg + SQLAlchemy 2.0) for high-throughput queries, Neo4j for relationship-heavy data like permission hierarchies, and Permify for fine-grained RBAC. Integrates with Jira for ticket sync, Supabase for auth delegation, and exposes OpenRouter for LLM routing. Background jobs run on Celery with Redis broker, monitored via Sentry. Database versioning through Alembic; infrastructure provisioned with Pulumi on AWS. | `FastAPI` `Neo4j` `Celery` `Supabase` `AWS` |
+| **Camping Reservations Manager** | Production SaaS application (v1.441.0) powering campground booking operations across multiple properties. Handles the full reservation lifecycle: availability calendars, guest check-in/check-out, payment processing via Stripe, and automated confirmation emails. Real-time updates through Supabase subscriptions keep availability synced across concurrent users. Supports multi-language interfaces (i18n) for international guests, SMS notifications via Twilio for booking reminders, and PDF invoice generation. Comprehensive Playwright E2E test suite with semantic-release for automated versioning and deployment. | `Vue 3` `Supabase` `Stripe` `Playwright` `Twilio` |
+| **Tales of Logistics** | Media publishing platform for a content production company. The Next.js 15 admin dashboard (React 19) enables editors to upload videos, podcasts, and written content through a Cloudinary-backed media pipeline. Implements a multi-stage approval workflow where content moves through draft → review → publish states with role-based permissions. Features a custom rich text editor, JWT-based authentication, and Prisma ORM connecting to PostgreSQL. The dashboard tracks episode numbers, generates unique slugs, and supports batch operations for bulk content approval. | `Next.js 15` `React 19` `Prisma` `PostgreSQL` `Cloudinary` |
+| **Edumag API** | Backend for a school management system handling administrative operations across educational institutions. Supports a role-based hierarchy (Super Admin, Admin, Staff) with distinct permission levels for managing users, qualifications, and institutional data. Built on NestJS 11 with Prisma 7 ORM for type-safe PostgreSQL access. Implements request throttling to prevent abuse, Helmet middleware for security headers (CSP, HSTS), and a modular architecture separating controllers, services, DTOs, and entities. Full test coverage with Jest for unit and integration testing. | `NestJS` `Prisma` `PostgreSQL` `Jest` |
+
+</details>
 
 <details>
 <summary><b>AI & Intelligent Systems</b></summary>
@@ -66,9 +40,9 @@ Building production-grade systems with real-time data pipelines, AI orchestratio
 
 | Project | Description | Stack |
 |---------|-------------|-------|
-| **AI Manager API** | LangChain/LangGraph orchestration backend with multi-provider support (OpenAI, Gemini, Groq, Mistral). DSPy prompt optimization, GPT-Researcher integration, MCP adapters, and OpenInference tracing. | `FastAPI` `LangGraph` `Celery` `Redis` `AWS` |
-| **Funding vs OI Divergence Screener** | MCP tool for AI agents — transforms derivatives market data into ranked trading signals with cross-exchange aggregation (Binance, Bybit, OKX) and confidence scoring. | `TypeScript` `MCP` `Redis` `Node.js` |
-| **EasySpecs.ai Extension** | Published VS Code extension for SRS documentation and AI-powered code analysis with multi-agent orchestration and JSON Schema validation. | `TypeScript` `VS Code API` `OpenCode CLI` |
+| **AI Manager API** | Intelligent orchestration layer for AI-powered features across the platform. Routes requests to optimal LLM providers (OpenAI, Google Gemini, Groq, Mistral) based on task complexity, cost, and latency requirements. Built on LangChain and LangGraph for stateful multi-step agent workflows. Includes DSPy modules for prompt optimization, GPT-Researcher for automated web research tasks, and MCP protocol adapters for tool integration. Celery workers handle long-running inference jobs with Redis as message broker. Full observability through OpenInference tracing exported to Arize Phoenix for debugging agent behavior and monitoring token usage. | `FastAPI` `LangGraph` `Celery` `Redis` `AWS` |
+| **Funding vs OI Divergence Screener** | Decision engine exposed as an MCP server for AI trading agents. Continuously polls perpetual futures data from Binance, Bybit, and OKX, computing volume-weighted funding rates and open interest changes. Classifies market conditions into actionable signals (bullish, bearish, overextended, neutral) using a deterministic scoring algorithm. Returns ranked opportunities with confidence scores, cross-exchange consistency metrics, and structured interpretation explaining cause, mechanism, and trade implication. Redis caching with TTL ensures fresh data while protecting against exchange rate limits. | `TypeScript` `MCP` `Redis` `Node.js` |
+| **EasySpecs.ai Extension** | Published VS Code extension that automates software requirements documentation. Analyzes codebases to generate structured SRS artifacts (features, use cases, data models) through coordinated AI agent pipelines. Configurable concurrency limits control parallel agent execution. Validates generated context against JSON Schemas, auto-repairs malformed outputs, and syncs documentation to the EasySpecs.ai platform. Integrates with OpenCode CLI for local agent runs and includes a webview panel for navigating generated specifications within the IDE. | `TypeScript` `VS Code API` `esbuild` |
 
 </details>
 
@@ -79,33 +53,11 @@ Building production-grade systems with real-time data pipelines, AI orchestratio
 
 | Project | Description | Stack |
 |---------|-------------|-------|
-| **Solana Insider Tracker** | Real-time WebSocket monitor detecting insider accumulation in Solana memecoins. Fresh wallet detection, CEX funding patterns, cluster analysis, and Telegram alerts. | `Python` `WebSocket` `Solana` |
-| **FX Sentiment Dashboard** | Full-stack sentiment platform with Puppeteer scraping, PostgreSQL persistence, and scheduled cron jobs. | `Express` `PostgreSQL` `Puppeteer` |
-
-</details>
-
-<details>
-<summary><b>Enterprise SaaS & Backend</b></summary>
-
-<br>
-
-| Project | Description | Stack |
-|---------|-------------|-------|
-| **System Manager API** | FastAPI backend with async PostgreSQL, Neo4j graph DB, Permify authorization, Jira integration, and Sentry monitoring. Alembic migrations with Pulumi IaC deployment. | `FastAPI` `Neo4j` `Celery` `Supabase` `AWS` |
-| **Camping Reservations Manager** | Vue 3 SaaS platform (v1.441.0) with Stripe payments, Playwright E2E testing, i18n, semantic-release CI/CD, and Twilio notifications. | `Vue 3` `Supabase` `Stripe` `Playwright` |
-| **TOL Dashboard** | Next.js 15 admin dashboard for Tales of Logistics — content management with batch approval workflows, Cloudinary uploads, and rich text editing. | `Next.js 15` `React 19` `Prisma` `PostgreSQL` |
-| **Edumag API** | NestJS 11 backend with Prisma ORM, rate limiting, Helmet security, and Jest testing suite. | `NestJS` `Prisma` `PostgreSQL` `Jest` |
+| **Solana Insider Tracker** | Early-warning system for detecting coordinated accumulation in newly launched Solana tokens. Subscribes to real-time WebSocket logs from Raydium, Orca, and Meteora DEXs, parsing swap events without requiring full transaction fetches. Classifies wallets as "fresh" (<72h old) or "stealth" (funded from CEX hot wallets and swapping within minutes). Detects wallet clusters—3+ related wallets buying the same token in tight time windows with similar position sizes. Computes a composite confidence score (0-100) weighing wallet age, funding patterns, cluster strength, and liquidity safety (mint/freeze authority status). Alerts above threshold are pushed to Telegram with severity-based notification priority. All state lives in-memory with automatic eviction of stale tokens (>6h) and old wallet profiles (>72h). | `Python` `WebSocket` `Solana` `asyncio` |
+| **FX Sentiment Dashboard** | Full-stack platform aggregating retail forex positioning data. Backend scrapes sentiment metrics from Myfxbook using Puppeteer, normalizes the data, and stores time-series snapshots in PostgreSQL. Scheduled cron jobs refresh data every 60 seconds during market hours. The Express API exposes endpoints for current sentiment by pair, historical shifts (hourly/daily/weekly), and computed currency strength scores that aggregate positioning across all pairs containing each major (EUR, USD, GBP, JPY, AUD, NZD, CAD, CHF). Frontend displays sentiment ratios with visual indicators for extreme readings (>75% long or <25% short). | `Express` `PostgreSQL` `Puppeteer` `node-cron` |
 
 </details>
 
 ---
 
-<div align="center">
-
-### Let's Build Something
-
-[![Portfolio](https://img.shields.io/badge/View_Portfolio-000?style=for-the-badge&logo=vercel&logoColor=white)](https://chima-peter.vercel.app/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/chima-peter)
-[![LinkedIn](https://img.shields.io/badge/Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chimaojimma)
-
-</div>
+[GitHub](https://github.com/chima-peter) · [Portfolio](https://chima-peter.vercel.app/) · [LinkedIn](https://linkedin.com/in/chimaojimma)
