@@ -8,12 +8,16 @@
 
 ## Tech Stack
 
-**Languages:** TypeScript, Python, JavaScript  
-**Frontend:** React, Next.js, Vue 3, Tailwind CSS  
-**Backend:** FastAPI, NestJS, Node.js, Django, Express  
-**AI/ML:** LangChain, LangGraph, OpenAI, Gemini, Groq, Mistral  
-**Data:** PostgreSQL, Redis, Supabase, Neo4j, Prisma  
-**Infrastructure:** Docker, AWS, Celery, Pulumi
+| | |
+|---|---|
+| **Languages** | TypeScript · Python · JavaScript |
+| **Frontend** | React · Next.js · Vue 3 · Tailwind CSS · Framer Motion · Radix UI |
+| **Backend** | FastAPI · NestJS · Node.js · Django · Express |
+| **AI/ML** | LangChain · OpenAI · Gemini · Groq · Mistral |
+| **Databases** | PostgreSQL · Redis · Supabase · Neo4j · Prisma |
+| **Infrastructure** | Docker · AWS · Celery · Pulumi · Sentry · Vercel |
+| **Testing** | Jest · Playwright · Vitest |
+| **Other** | WebSocket · Puppeteer · Stripe · Twilio · Cloudinary · Telegram API |
 
 ---
 
@@ -24,12 +28,44 @@
 
 <br>
 
-| Project | Description | Stack |
-|---------|-------------|-------|
-| **System Manager API** | Core backend for a multi-tenant enterprise platform handling organization management, user authentication, and cross-service coordination. Built on FastAPI with async PostgreSQL (asyncpg + SQLAlchemy 2.0) for high-throughput queries, Neo4j for relationship-heavy data like permission hierarchies, and Permify for fine-grained RBAC. Integrates with Jira for ticket sync, Supabase for auth delegation, and exposes OpenRouter for LLM routing. Background jobs run on Celery with Redis broker, monitored via Sentry. Database versioning through Alembic; infrastructure provisioned with Pulumi on AWS. | `FastAPI` `Neo4j` `Celery` `Supabase` `AWS` |
-| **Camping Reservations Manager** | Production SaaS application (v1.441.0) powering campground booking operations across multiple properties. Handles the full reservation lifecycle: availability calendars, guest check-in/check-out, payment processing via Stripe, and automated confirmation emails. Real-time updates through Supabase subscriptions keep availability synced across concurrent users. Supports multi-language interfaces (i18n) for international guests, SMS notifications via Twilio for booking reminders, and PDF invoice generation. Comprehensive Playwright E2E test suite with semantic-release for automated versioning and deployment. | `Vue 3` `Supabase` `Stripe` `Playwright` `Twilio` |
-| **Tales of Logistics** | Media publishing platform for a content production company. The Next.js 15 admin dashboard (React 19) enables editors to upload videos, podcasts, and written content through a Cloudinary-backed media pipeline. Implements a multi-stage approval workflow where content moves through draft → review → publish states with role-based permissions. Features a custom rich text editor, JWT-based authentication, and Prisma ORM connecting to PostgreSQL. The dashboard tracks episode numbers, generates unique slugs, and supports batch operations for bulk content approval. | `Next.js 15` `React 19` `Prisma` `PostgreSQL` `Cloudinary` |
-| **Edumag API** | Backend for a school management system handling administrative operations across educational institutions. Supports a role-based hierarchy (Super Admin, Admin, Staff) with distinct permission levels for managing users, qualifications, and institutional data. Built on NestJS 11 with Prisma 7 ORM for type-safe PostgreSQL access. Implements request throttling to prevent abuse, Helmet middleware for security headers (CSP, HSTS), and a modular architecture separating controllers, services, DTOs, and entities. Full test coverage with Jest for unit and integration testing. | `NestJS` `Prisma` `PostgreSQL` `Jest` |
+### System Manager API
+
+**Problem:** GlueCharm and EasySpecs.ai (web app + VS Code extension) needed a shared backend to manage software specification projects. Teams define features, use cases, user stories, and system diagrams—and need isolated workspaces, role-based access, and integration with tools like Jira.
+
+**Solution:** Built the core backend powering GlueCharm, the EasySpecs.ai web application, and the EasySpecs.ai VS Code extension. It manages organizations, workspaces, projects, and specification artifacts. Team members are invited with specific roles (owner, admin, member). The system syncs with Jira so user stories push directly to sprint boards, links to Git repositories for code context, and background workers handle invitations, exports, and AI-powered content generation.
+
+`FastAPI` `PostgreSQL` `Neo4j` `Redis` `Celery` `Supabase` `Sentry` `Pulumi` `AWS`
+
+---
+
+
+### Camping Reservations Manager
+
+**Problem:** Campground operators in Spain were managing bookings manually across multiple properties—leading to double bookings, missed payments, and communication gaps with guests.
+
+**Solution:** Built a booking platform where operators manage availability calendars, accept reservations, and process payments through Stripe. The system sends automatic confirmation emails and SMS reminders via Twilio. Real-time sync ensures two people can't book the same spot. Supports multiple languages for international guests and generates PDF invoices.
+
+`Vue 3` `TypeScript` `Supabase` `Stripe` `Twilio` `Playwright` `i18n`
+
+---
+
+### Tales of Logistics
+
+**Problem:** A media production company needed a way for their team to upload, review, and publish videos, podcasts, and articles—with proper approval workflows so nothing goes live without review.
+
+**Solution:** Created an admin dashboard using Next.js 15 and React 19 where editors upload content to Cloudinary, write articles with a rich text editor, and submit for approval. Admins review and approve content in batches. The system tracks episode numbers, generates URLs automatically, and uses role-based access so only authorized users can publish.
+
+`Next.js 15` `React 19` `TypeScript` `Prisma` `PostgreSQL` `Cloudinary` `JWT`
+
+---
+
+### Edumag API
+
+**Problem:** Secondary schools in Nigeria needed a full school management system to manage staff accounts, track qualifications, and handle administrative data—with different access levels for admins and regular staff.
+
+**Solution:** Built a NestJS API with three permission levels (Super Admin, Admin, Staff). Each role has specific access to manage users, view records, or update institutional data. The API includes rate limiting to prevent abuse, security headers for protection, and full test coverage to ensure reliability.
+
+`NestJS` `TypeScript` `Prisma` `PostgreSQL` `Jest` `Helmet`
 
 </details>
 
@@ -38,11 +74,35 @@
 
 <br>
 
-| Project | Description | Stack |
-|---------|-------------|-------|
-| **AI Manager API** | Intelligent orchestration layer for AI-powered features across the platform. Routes requests to optimal LLM providers (OpenAI, Google Gemini, Groq, Mistral) based on task complexity, cost, and latency requirements. Built on LangChain and LangGraph for stateful multi-step agent workflows. Includes DSPy modules for prompt optimization, GPT-Researcher for automated web research tasks, and MCP protocol adapters for tool integration. Celery workers handle long-running inference jobs with Redis as message broker. Full observability through OpenInference tracing exported to Arize Phoenix for debugging agent behavior and monitoring token usage. | `FastAPI` `LangGraph` `Celery` `Redis` `AWS` |
-| **Funding vs OI Divergence Screener** | Decision engine exposed as an MCP server for AI trading agents. Continuously polls perpetual futures data from Binance, Bybit, and OKX, computing volume-weighted funding rates and open interest changes. Classifies market conditions into actionable signals (bullish, bearish, overextended, neutral) using a deterministic scoring algorithm. Returns ranked opportunities with confidence scores, cross-exchange consistency metrics, and structured interpretation explaining cause, mechanism, and trade implication. Redis caching with TTL ensures fresh data while protecting against exchange rate limits. | `TypeScript` `MCP` `Redis` `Node.js` |
-| **EasySpecs.ai Extension** | Published VS Code extension that automates software requirements documentation. Analyzes codebases to generate structured SRS artifacts (features, use cases, data models) through coordinated AI agent pipelines. Configurable concurrency limits control parallel agent execution. Validates generated context against JSON Schemas, auto-repairs malformed outputs, and syncs documentation to the EasySpecs.ai platform. Integrates with OpenCode CLI for local agent runs and includes a webview panel for navigating generated specifications within the IDE. | `TypeScript` `VS Code API` `esbuild` |
+### AI Manager API
+
+**Problem:** The platform needed AI capabilities, but relying on a single AI provider (like OpenAI) meant higher costs and single points of failure. Different tasks also needed different AI models.
+
+**Solution:** Built an orchestration service that connects to multiple AI providers (OpenAI, Gemini, Groq, Mistral) and routes each request to the best one based on the task. Complex multi-step AI workflows run through LangGraph. Long-running AI jobs process in the background with Celery. The system tracks token usage and monitors AI behavior for debugging.
+
+`FastAPI` `Python` `LangChain` `LangGraph` `DSPy` `Celery` `Redis` `AWS`
+
+---
+
+### EasySpecs.ai Extension
+
+**Problem:** Writing software requirements documents is tedious and often skipped. Teams end up without clear specs, and when documentation does exist, it quickly becomes outdated because it lives separately from the code.
+
+**Solution:** Built a VS Code extension that brings EasySpecs.ai directly into the developer's editor. It analyzes codebases using AI agents to generate structured documentation—features, use cases, data models—and keeps everything in sync with the EasySpecs.ai web platform. The extension runs analysis pipelines with configurable concurrency, validates outputs against schemas, and provides an in-editor panel for browsing specifications without leaving VS Code.
+
+`TypeScript` `VS Code API` `esbuild` `JSON Schema` `OpenCode CLI`
+
+---
+
+### Funding vs OI Divergence Screener
+
+**Problem:** Crypto traders needed a way to spot market opportunities across multiple exchanges, but manually checking Binance, Bybit, and OKX was time-consuming and error-prone.
+
+**Solution:** Built a tool that automatically collects trading data from all three exchanges, analyzes funding rates and open interest, and identifies bullish or bearish signals. It ranks opportunities by confidence and explains in plain English why a signal is forming. Designed as an MCP server so AI trading agents can query it directly.
+
+`TypeScript` `Node.js` `Redis` `MCP Protocol` `REST APIs`
+
+---
 
 </details>
 
@@ -51,10 +111,23 @@
 
 <br>
 
-| Project | Description | Stack |
-|---------|-------------|-------|
-| **Solana Insider Tracker** | Early-warning system for detecting coordinated accumulation in newly launched Solana tokens. Subscribes to real-time WebSocket logs from Raydium, Orca, and Meteora DEXs, parsing swap events without requiring full transaction fetches. Classifies wallets as "fresh" (<72h old) or "stealth" (funded from CEX hot wallets and swapping within minutes). Detects wallet clusters—3+ related wallets buying the same token in tight time windows with similar position sizes. Computes a composite confidence score (0-100) weighing wallet age, funding patterns, cluster strength, and liquidity safety (mint/freeze authority status). Alerts above threshold are pushed to Telegram with severity-based notification priority. All state lives in-memory with automatic eviction of stale tokens (>6h) and old wallet profiles (>72h). | `Python` `WebSocket` `Solana` `asyncio` |
-| **FX Sentiment Dashboard** | Full-stack platform aggregating retail forex positioning data. Backend scrapes sentiment metrics from Myfxbook using Puppeteer, normalizes the data, and stores time-series snapshots in PostgreSQL. Scheduled cron jobs refresh data every 60 seconds during market hours. The Express API exposes endpoints for current sentiment by pair, historical shifts (hourly/daily/weekly), and computed currency strength scores that aggregate positioning across all pairs containing each major (EUR, USD, GBP, JPY, AUD, NZD, CAD, CHF). Frontend displays sentiment ratios with visual indicators for extreme readings (>75% long or <25% short). | `Express` `PostgreSQL` `Puppeteer` `node-cron` |
+### Solana Insider Tracker
+
+**Problem:** New tokens launch on Solana constantly, and some are pump-and-dump schemes where insiders buy early and sell to retail traders. Spotting these patterns manually is nearly impossible at blockchain speed.
+
+**Solution:** Built a real-time monitoring tool that watches Solana transactions as they happen. It identifies suspicious patterns: brand new wallets, accounts funded from exchanges and trading within minutes, and groups of wallets buying the same token together. Each alert includes a confidence score, and high-priority alerts get sent to Telegram instantly.
+
+`Python` `asyncio` `WebSocket` `Solana RPC` `Telegram API`
+
+---
+
+### FX Sentiment Dashboard
+
+**Problem:** Forex traders wanted to see how other retail traders were positioned (long vs short) across currency pairs, but this data was scattered and hard to track over time.
+
+**Solution:** Built a dashboard that automatically collects sentiment data, stores historical snapshots, and shows how positioning has changed over time (hourly, daily, weekly). It calculates which currencies are strongest or weakest based on aggregate positioning and highlights extreme readings where most traders are on one side of a trade.
+
+`Express` `Node.js` `PostgreSQL` `Puppeteer` `React` `node-cron`
 
 </details>
 
