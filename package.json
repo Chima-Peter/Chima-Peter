@@ -12,6 +12,7 @@
     "@vercel/analytics": "^1.5.0",
     "framer-motion": "^12.23.0",
     "next": "15.3.4",
+    "nodemailer": "^8.0.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
+    "@types/nodemailer": "^8.0.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",

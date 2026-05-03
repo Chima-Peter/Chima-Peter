@@ -1,39 +1,43 @@
 import type { Metadata, Viewport } from "next";
-import { Sen } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/navigation/footer";
-import ExportNav from "@/components/navigation/export_nav";
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
 
-const sen = Sen({
-  variable: "--font-sen",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
 });
 
 export const viewport: Viewport = {
-  themeColor: "#00093d",
+  themeColor: "#0a0a0b",
   width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chima-peter.vercel.app/"),
-  title: "Chima Ojimma – Full Stack Engineer",
+  title: "Chima Peter Ojimma — Software Engineer",
   description:
-    "I'm Chima Ojimma, a full stack engineer with experience building performant web applications using modern technologies like Next.js, React, Node.js, and PostgreSQL.",
+    "Software Engineer building production systems with real-time data pipelines, AI orchestration, and enterprise SaaS. Specialized in TypeScript, Python, FastAPI, and Next.js.",
   openGraph: {
-    title: "Chima Ojimma – Full Stack Developer & Engineer",
+    title: "Chima Peter Ojimma — Software Engineer",
     description:
-      "Explore my portfolio featuring full stack projects, scalable backend systems, and modern UI/UX design.",
+      "Building production systems with real-time data pipelines, AI orchestration, and enterprise SaaS.",
     url: "https://chima-peter.vercel.app/",
-    siteName: "Chima Ojimma Portfolio",
+    siteName: "Chima Peter Ojimma",
     images: [
       {
-        url: "/icon.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Chima Ojimma Portfolio Screenshot",
+        alt: "Chima Peter Ojimma - Software Engineer",
       },
     ],
     locale: "en_US",
@@ -41,51 +45,32 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chima Ojimma – Full Stack Developer",
+    title: "Chima Peter Ojimma — Software Engineer",
     description:
-      "Full stack developer portfolio featuring projects built with Next.js, TypeScript, Prisma, and more.",
-    images: ["/icon.jpg"],
-    creator: "@he_mobs",
+      "Building production systems with real-time data pipelines, AI orchestration, and enterprise SaaS.",
+    images: ["/og-image.png"],
   },
   icons: {
-    icon: "/display_icon.png",
-    apple: "/display_icon.png",
-    shortcut: "/display_icon.png",
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/display_icon.png",
-        color: "#ffffff"
-      },
-    ],
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   robots: {
     index: true,
     follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      nocache: true,
-    },
   },
   keywords: [
-    "Chima Ojimma",
-    "Full stack developer",
-    "Web developer portfolio",
-    "Next.js developer",
-    "React developer",
-    "TypeScript projects",
-    "Node.js",
-    "Prisma",
-    "React Native",
+    "Chima Peter Ojimma",
+    "Software Engineer",
+    "Full Stack Developer",
+    "TypeScript",
     "Python",
-    "Web scraping",
-    "Modern web development",
+    "FastAPI",
+    "Next.js",
+    "React",
+    "AI Engineering",
+    "Backend Developer",
   ],
 };
-
-
 
 export default function RootLayout({
   children,
@@ -93,13 +78,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="flex bg-background justify-center w-[100%] bg-[#00093d] z-10">
-      <body className={`${sen.variable} max-w-[1440px] w-[100%] font-sen relative`}>
-        <ExportNav />
-        {children}
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        <div className="noise" />
+        <Navbar />
+        <main className="min-h-screen">{children}</main>
         <Footer />
+        <Analytics />
       </body>
-      <Analytics />
     </html>
   );
 }
