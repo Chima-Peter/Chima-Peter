@@ -3,6 +3,11 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+type ProjectLink = {
+  label: string;
+  href: string;
+};
+
 type Project = {
   title: string;
   category: string;
@@ -10,10 +15,42 @@ type Project = {
   problem: string;
   tech: string[];
   link?: string;
+  links?: ProjectLink[];
   featured?: boolean;
 };
 
 const projects: Project[] = [
+  {
+    title: "EasySpecs.ai",
+    category: "Developer Tools",
+    description:
+      "Keeps software requirements next to the code so docs don’t drift. Three surfaces share one project cloud: the web hub for Trust Engineering (projects, change requests, SRS with AI chat), the easyspecs-cli factory that builds structured .easyspecs/context from repos, and the VS Code/Cursor/Windsurf extension for in-editor browse and push/pull.",
+    problem:
+      "Writing software requirements is tedious and often skipped. Documentation lives separately from code and becomes outdated.",
+    tech: [
+      "Vue 3",
+      "TypeScript",
+      "Vite",
+      "Node.js",
+      "VS Code API",
+      "esbuild",
+      "Ajv",
+      "Tailwind CSS",
+    ],
+    link: "https://easyspecs.ai",
+    links: [
+      { label: "Web", href: "https://easyspecs.ai" },
+      {
+        label: "Extension",
+        href: "https://open-vsx.org/extension/easyspecs/easyspecs-ai",
+      },
+      {
+        label: "CLI",
+        href: "https://www.npmjs.com/package/@gluecharm-lab/easyspecs-cli",
+      },
+    ],
+    featured: true,
+  },
   {
     title: "ManomPay",
     category: "Fintech",
@@ -26,35 +63,22 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    title: "System Manager API",
+    title: "Camping Manager",
     category: "Enterprise SaaS",
     description:
-      "Core backend powering GlueCharm and EasySpecs.ai (web app + VS Code extension). Manages organizations, workspaces, projects, and specification artifacts with role-based access. Includes a dedicated AI microservice for multi-provider orchestration.",
-    problem:
-      "Needed a shared backend for software specification projects with isolated workspaces, role-based access, Jira integration, and AI capabilities.",
-    tech: ["FastAPI", "PostgreSQL", "Neo4j", "Redis", "Celery", "AWS", "LangChain"],
-    link: "https://gluecharm.com",
-    featured: true,
-  },
-  {
-    title: "EasySpecs.ai Extension",
-    category: "Developer Tools",
-    description:
-      "VS Code extension that analyzes codebases using AI agents to generate structured documentation—features, use cases, data models—synced with the EasySpecs.ai web platform.",
-    problem:
-      "Writing software requirements is tedious and often skipped. Documentation lives separately from code and becomes outdated.",
-    tech: ["TypeScript", "VS Code API", "esbuild", "JSON Schema"],
-    link: "https://staging.easyspecs.ai",
-    featured: true,
-  },
-  {
-    title: "Camping Reservations Manager",
-    category: "Enterprise SaaS",
-    description:
-      "Multi-property booking platform for Spanish campground operators. Real-time availability sync prevents double bookings, Stripe handles payments, and Twilio automates guest communications. Supports i18n for international guests and generates PDF invoices.",
+      "Keeps campsite operations and guest booking on one backend. Two surfaces share that system: the Reservations Manager for staff ops and direct guest booking (reservations, availability, pricing, check-in/out, billing, multi-tenant locations), and a WordPress plugin that embeds those guest booking flows on campground marketing sites without rebuilding the booking UI.",
     problem:
       "Campground operators managed bookings manually across multiple properties—leading to double bookings, missed payments, and communication gaps with guests.",
-    tech: ["Vue 3", "TypeScript", "Supabase", "Stripe", "Twilio", "Playwright"],
+    tech: [
+      "Vue 3",
+      "TypeScript",
+      "Vite",
+      "Pinia",
+      "Supabase",
+      "Stripe",
+      "PHP",
+      "WordPress",
+    ],
     link: "https://webstaging.adicamping.com/en",
     featured: true,
   },
@@ -62,11 +86,30 @@ const projects: Project[] = [
     title: "Tales of Logistics",
     category: "Content Management",
     description:
-      "Admin dashboard for media production with content upload to Cloudinary, rich text editing, and batch approval workflows for videos, podcasts, and articles.",
+      "Public marketing/content site for a logistics podcast and learning brand. One Next.js app serves episodes, interviews, customs cuts, and blog nuggets from a Postgres content store—moderated via isApproved/isDeleted—with Nodemailer for contact, partner, and newsletter forms. No staff ops product; pages fetch Route Handlers under /api/* and render Cloudinary-backed media.",
     problem:
-      "Media team needed proper approval workflows so nothing goes live without review.",
-    tech: ["Next.js 15", "React 19", "Prisma", "PostgreSQL", "Cloudinary"],
+      "Needed a public site to publish podcasts, videos, customs clips, and blog content with moderated visibility and inbound contact/partner forms—without a separate ops backend.",
+    tech: [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "PostgreSQL",
+      "pg",
+      "Nodemailer",
+      "Cloudinary",
+      "Tailwind CSS",
+    ],
     link: "https://talesoflogistics.com",
+    featured: true,
+  },
+  {
+    title: "System Manager API",
+    category: "Enterprise SaaS",
+    description:
+      "Core backend powering GlueCharm and EasySpecs.ai (web app, CLI, and IDE extension). Manages organizations, workspaces, projects, and specification artifacts with role-based access. Includes a dedicated AI microservice for multi-provider orchestration.",
+    problem:
+      "Needed a shared backend for software specification projects with isolated workspaces, role-based access, Jira integration, and AI capabilities.",
+    tech: ["FastAPI", "PostgreSQL", "Neo4j", "Redis", "Celery", "AWS", "LangChain"],
   },
   {
     title: "Funding vs OI Divergence Screener",
@@ -140,21 +183,25 @@ export default function Projects() {
             >
               <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center gap-3 mb-3">
                     <span className="tag">{project.category}</span>
-                    {project.link && (
+                    {(project.links ?? (project.link
+                      ? [{ label: "Visit", href: project.link }]
+                      : [])
+                    ).map((item) => (
                       <Link
-                        href={project.link}
+                        key={item.href}
+                        href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs text-accent hover:text-accent-hover transition-colors flex items-center gap-1"
                       >
-                        Visit
+                        {item.label}
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                       </Link>
-                    )}
+                    ))}
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-accent transition-colors">
                     {project.title}

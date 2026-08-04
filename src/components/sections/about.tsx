@@ -94,10 +94,6 @@ export default function About() {
                   orchestration systems, and developer tools. I care about clean
                   abstractions and code that&apos;s easy to maintain.
                 </p>
-                <p className="text-zinc-300">
-                  Currently expanding into <span className="text-accent font-medium">Go</span> for
-                  high-performance services.
-                </p>
               </div>
 
               <div className="grid sm:grid-cols-3 gap-4 mb-10">

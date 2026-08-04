@@ -10,7 +10,7 @@ type StackCategory = {
 const stack: StackCategory[] = [
   {
     name: "Languages",
-    items: ["TypeScript", "Python", "JavaScript"],
+    items: ["TypeScript", "Python", "Golang", "JavaScript"],
   },
   {
     name: "Frontend",
@@ -22,7 +22,7 @@ const stack: StackCategory[] = [
   },
   {
     name: "AI/ML",
-    items: ["LangChain", "OpenAI", "Gemini", "Groq", "Mistral"],
+    items: ["LangChain", "LangGraph", "OpenAI", "Gemini"],
   },
   {
     name: "Databases",

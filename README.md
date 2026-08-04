@@ -38,34 +38,34 @@
 
 ---
 
-### System Manager API — [GlueCharm](https://gluecharm.com/) · [EasySpecs.ai](https://staging.easyspecs.ai/)
+### System Manager API — [GlueCharm](https://gluecharm.com/) · [EasySpecs.ai](https://easyspecs.ai/)
 
-**Problem:** GlueCharm and EasySpecs.ai (web app + VS Code extension) needed a shared backend to manage software specification projects. Teams define features, use cases, user stories, and system diagrams—and need isolated workspaces, role-based access, and integration with tools like Jira.
+**Problem:** GlueCharm and EasySpecs.ai (web app, CLI, and IDE extension) needed a shared backend to manage software specification projects. Teams define features, use cases, user stories, and system diagrams—and need isolated workspaces, role-based access, and integration with tools like Jira.
 
-**Solution:** Built the core backend powering GlueCharm, the EasySpecs.ai web application, and the EasySpecs.ai VS Code extension. It manages organizations, workspaces, projects, and specification artifacts. Team members are invited with specific roles (owner, admin, member). The system syncs with Jira so user stories push directly to sprint boards, links to Git repositories for code context, and background workers handle invitations, exports, and AI-powered content generation. Includes a dedicated **AI microservice** that orchestrates multiple providers (OpenAI, Gemini, Groq, Mistral) with intelligent routing.
+**Solution:** Built the core backend powering GlueCharm, the EasySpecs.ai web application, CLI, and IDE extension. It manages organizations, workspaces, projects, and specification artifacts. Team members are invited with specific roles (owner, admin, member). The system syncs with Jira so user stories push directly to sprint boards, links to Git repositories for code context, and background workers handle invitations, exports, and AI-powered content generation. Includes a dedicated **AI microservice** that orchestrates multiple providers (OpenAI, Gemini, Groq, Mistral) with intelligent routing.
 
 `FastAPI` `PostgreSQL` `Neo4j` `Redis` `Celery` `Supabase` `Sentry` `Pulumi` `AWS` `LangChain`
 
 ---
 
 
-### [Camping Reservations Manager](https://webstaging.adicamping.com/en)
+### [Camping Manager](https://webstaging.adicamping.com/en)
 
-**Problem:** Campground operators in Spain were managing bookings manually across multiple properties—leading to double bookings, missed payments, and communication gaps with guests.
+**Problem:** Campground operators managed bookings manually across multiple properties—leading to double bookings, missed payments, and communication gaps with guests.
 
-**Solution:** Built a booking platform where operators manage availability calendars, accept reservations, and process payments through Stripe. The system sends automatic confirmation emails and SMS reminders via Twilio. Real-time sync ensures two people can't book the same spot. Supports multiple languages for international guests and generates PDF invoices.
+**Solution:** Camping Manager keeps campsite operations and guest booking on one backend. Two surfaces share that system: the **Reservations Manager** is the central ops product for staff and guests—reservations, availability, pricing, check-in/out, billing, maps, compliance, and config, with public search/book/pay/pre-check-in flows and multi-tenant camping locations; the **WordPress plugin** bridges campground marketing sites so they can offer online booking without rebuilding the booking UI (shortcodes/blocks connecting to the manager’s public APIs). Staff configure inventory, seasons, pricing, and policies in the manager → public booking/payment APIs and Vue routes serve guests → the WP plugin embeds those guest flows on sites like ADI Camping.
 
-`Vue 3` `TypeScript` `Supabase` `Stripe` `Twilio` `Playwright` `i18n`
+`Vue 3` `Vite` `TypeScript` `Pinia` `Tailwind` `TipTap` `Stripe` `Supabase` `Vitest` `Playwright` `PHP` `WordPress`
 
 ---
 
 ### [Tales of Logistics](https://talesoflogistics.com/)
 
-**Problem:** A media production company needed a way for their team to upload, review, and publish videos, podcasts, and articles—with proper approval workflows so nothing goes live without review.
+**Problem:** Needed a public site to publish podcasts, videos, customs clips, and blog content with moderated visibility and inbound contact/partner forms—without a separate ops backend.
 
-**Solution:** Created an admin dashboard using Next.js 15 and React 19 where editors upload content to Cloudinary, write articles with a rich text editor, and submit for approval. Admins review and approve content in batches. The system tracks episode numbers, generates URLs automatically, and uses role-based access so only authorized users can publish.
+**Solution:** Tales of Logistics is a public marketing/content site for a logistics podcast and learning brand. One Next.js 15 App Router app serves readers: home, episode catalog (`/podcasts`), videos/interviews (`/videos`), customs-focused cuts (`/customs-cut`), blog nuggets (`/logistics-nuggets`), partners, about, and contact. Content is moderated in Postgres via `isApproved` / `isDeleted`; the site only reads approved rows. Pages call Route Handlers under `/api/*` (podcasts, videos, customs-cut, posts, send-email) through a `pg` Pool, with Nodemailer for contact/partner/newsletter mail and Cloudinary for remote images.
 
-`Next.js 15` `React 19` `TypeScript` `Prisma` `PostgreSQL` `Cloudinary` `JWT`
+`Next.js 15` `React 19` `TypeScript` `PostgreSQL` `pg` `Nodemailer` `Cloudinary` `Tailwind CSS` `Framer Motion` `Vercel Analytics`
 
 ---
 
@@ -84,13 +84,13 @@
 
 <br>
 
-### [EasySpecs.ai Extension](https://www.npmjs.com/package/@gluecharm-lab/easyspecs-cli) — [Web App](https://staging.easyspecs.ai/)
+### [EasySpecs.ai](https://easyspecs.ai/) — [Extension](https://open-vsx.org/extension/easyspecs/easyspecs-ai) — [CLI](https://www.npmjs.com/package/@gluecharm-lab/easyspecs-cli)
 
 **Problem:** Writing software requirements documents is tedious and often skipped. Teams end up without clear specs, and when documentation does exist, it quickly becomes outdated because it lives separately from the code.
 
-**Solution:** Built a VS Code extension that brings EasySpecs.ai directly into the developer's editor. It analyzes codebases using AI agents to generate structured documentation—features, use cases, data models—and keeps everything in sync with the EasySpecs.ai web platform. The extension runs analysis pipelines with configurable concurrency, validates outputs against schemas, and provides an in-editor panel for browsing specifications without leaving VS Code.
+**Solution:** EasySpecs.ai keeps software requirements next to the code so docs don’t drift. Three surfaces share one project cloud: the **web app** is the hub for Trust Engineering—projects, change requests, and SRS docs (preview/edit, AI chat, auto-generate)—plus org settings, credits, Git, and Jira; the **CLI** (`easyspecs-cli`) is a headless factory that turns a repo into structured `.easyspecs/context` (`analysis`, `update context`, `context drift`) with CI-friendly `--json` / `--ci` and agent harnesses (OpenCode, Claude Code, Gemini CLI, Cursor CLI, Codex); the **extension** (VS Code / Cursor / Windsurf) browses change requests and docs in the sidebar, shows affected code, and push/pulls with the web project while heavy work runs via the bundled CLI.
 
-`TypeScript` `VS Code API` `esbuild` `JSON Schema`
+`Vue 3` `TypeScript` `Vite` `Node.js` `VS Code API` `esbuild` `Ajv` `Tailwind CSS` `Pinia` `TipTap`
 
 ---
 
