@@ -24,18 +24,28 @@ const projects: Project[] = [
     title: "EasySpecs.ai",
     category: "Developer Tools",
     description:
-      "Keeps software requirements next to the code so docs don’t drift. Three surfaces share one project cloud: the web hub for Trust Engineering (projects, change requests, SRS with AI chat), the easyspecs-cli factory that builds structured .easyspecs/context from repos, and the VS Code/Cursor/Windsurf extension for in-editor browse and push/pull.",
+      "Co-built EasySpecs.ai, a Spec-Driven Development platform: Vue 3 web app, headless Node CLI, and VS Code/Cursor/Windsurf extension. The CLI runs a multi-phase factory that scans git repos into grounded application context (features, services, data, infra), with concurrent AI workstations (default ~45), incremental update-from-churn, drift checks vs reference specs, Graphify knowledge-graph hooks, and an ACE learning loop, then syncs .easyspecs/context to the cloud. The web app covers project/change-request workspaces, streaming SRS chat and auto-generate (credit-gated), discovery docs, bidirectional Jira, org sharing/git repos, EN/ES/CA i18n, and SEO prerendered marketing (pricing, Code Audit, Labs). The extension is a sidebar UI for browse/sign-in/sync that delegates analysis to the CLI.",
     problem:
       "Writing software requirements is tedious and often skipped. Documentation lives separately from code and becomes outdated.",
     tech: [
       "Vue 3",
       "TypeScript",
-      "Vite",
+      "Mermaid",
+      "Feature-Sliced Design",
+      "Playwright",
+      "VS Code Extension API",
       "Node.js",
-      "VS Code API",
-      "esbuild",
-      "Ajv",
-      "Tailwind CSS",
+      "Commander",
+      "ajv",
+      "OpenCode / Claude Code harness adapters",
+      "Graphify",
+      "Gluecharm System Manager & AI Manager APIs",
+      "Jira REST API",
+      "Sentry",
+      "Google Analytics",
+      "AWS S3/CloudFront",
+      "Pulumi",
+      "GitLab CI/CD",
     ],
     link: "https://easyspecs.ai",
     links: [
@@ -52,6 +62,70 @@ const projects: Project[] = [
     featured: true,
   },
   {
+    title: "StudyBuddy",
+    category: "EdTech",
+    description:
+      "Built a FastAPI-based study companion that lets students upload materials, ingest them into a hybrid search index, tutor via grounded RAG chat, and auto-generate chapter study cards with MCQ quizzes — covering auth (JWT + Redis blacklist), signed Supabase uploads, async parse→chunk→embed→index pipelines, LangGraph agents over WebSocket, cursor-paginated conversations/notifications with live SSE, and resilient RabbitMQ workers with TTL retries and DLQs for ingest, study cards, and memory extract.",
+    problem:
+      "Students juggle separate tools for notes, tutoring, and quizzes—with no grounding in their own course materials—so study time is fragmented and hard to scale.",
+    tech: [
+      "Python 3.14+",
+      "FastAPI",
+      "Supabase Postgres/Storage",
+      "Redis",
+      "RabbitMQ (aio-pika)",
+      "Elasticsearch 8 (hybrid RRF / kNN / BM25)",
+      "Sentence Transformers (all-MiniLM-L6-v2)",
+      "LangGraph",
+      "Google Gemini",
+      "Unstructured",
+      "Docker",
+    ],
+    links: [
+      { label: "Backend", href: "https://github.com/Chima-Peter/study_buddy" },
+      {
+        label: "Frontend",
+        href: "https://github.com/Chima-Peter/study_buddy_app",
+      },
+    ],
+    featured: true,
+  },
+  {
+    title: "Camping Manager",
+    category: "Enterprise SaaS",
+    description:
+      "Built a multi-tenant camping property management and booking platform (staff ops + public guest flows) covering reservations, availability, seasonal pricing, check-in/out, billing, rentals, shop, campsite maps, and Spanish tourism compliance (police reports, tourist tax), with multi-location tenancy via reactive Pinia stores, public booking/payment/pre-check-in APIs, Stripe payments, Twilio messaging, AI guest-document OCR (Gemini, no image retention), and Vertex AI EU RAG staff/guest chat—plus a WordPress Gutenberg/shortcode embed plugin, rules engines for pricing/cancellation/rentals, and AWS S3 + CloudFront delivery via Pulumi.",
+    problem:
+      "Campground operators managed bookings manually across multiple properties—leading to double bookings, missed payments, and communication gaps with guests.",
+    tech: [
+      "Vue 3",
+      "Tailwind CSS",
+      "Supabase (Postgres, Auth, RLS, Edge Functions / Deno)",
+      "Stripe",
+      "Twilio",
+      "Google Gemini",
+      "Vertex AI (EU RAG)",
+      "Vapi",
+      "Playwright",
+      "Pulumi",
+      "AWS S3/CloudFront",
+      "WordPress (PHP Gutenberg block + shortcode)",
+      "json-rules-engine",
+    ],
+    link: "https://webstaging.adicamping.com/en",
+    featured: true,
+  },
+  {
+    title: "System Manager API",
+    category: "Enterprise SaaS",
+    description:
+      "Core backend powering GlueCharm and EasySpecs.ai (web app, CLI, and IDE extension). Manages organizations, workspaces, projects, and specification artifacts with role-based access. Includes a dedicated AI microservice for multi-provider orchestration.",
+    problem:
+      "Needed a shared backend for software specification projects with isolated workspaces, role-based access, Jira integration, and AI capabilities.",
+    tech: ["FastAPI", "PostgreSQL", "Neo4j", "Redis", "Celery", "AWS", "LangChain"],
+    featured: true,
+  },
+  {
     title: "ManomPay",
     category: "Fintech",
     description:
@@ -60,26 +134,6 @@ const projects: Project[] = [
       "SMEs and freelancers struggled with fragmented financial tools—managing invoices, payments, and expenses across multiple apps led to cash flow blind spots.",
     tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Paystack"],
     link: "https://manomsolutions.com",
-    featured: true,
-  },
-  {
-    title: "Camping Manager",
-    category: "Enterprise SaaS",
-    description:
-      "Keeps campsite operations and guest booking on one backend. Two surfaces share that system: the Reservations Manager for staff ops and direct guest booking (reservations, availability, pricing, check-in/out, billing, multi-tenant locations), and a WordPress plugin that embeds those guest booking flows on campground marketing sites without rebuilding the booking UI.",
-    problem:
-      "Campground operators managed bookings manually across multiple properties—leading to double bookings, missed payments, and communication gaps with guests.",
-    tech: [
-      "Vue 3",
-      "TypeScript",
-      "Vite",
-      "Pinia",
-      "Supabase",
-      "Stripe",
-      "PHP",
-      "WordPress",
-    ],
-    link: "https://webstaging.adicamping.com/en",
     featured: true,
   },
   {
@@ -101,15 +155,6 @@ const projects: Project[] = [
     ],
     link: "https://talesoflogistics.com",
     featured: true,
-  },
-  {
-    title: "System Manager API",
-    category: "Enterprise SaaS",
-    description:
-      "Core backend powering GlueCharm and EasySpecs.ai (web app, CLI, and IDE extension). Manages organizations, workspaces, projects, and specification artifacts with role-based access. Includes a dedicated AI microservice for multi-provider orchestration.",
-    problem:
-      "Needed a shared backend for software specification projects with isolated workspaces, role-based access, Jira integration, and AI capabilities.",
-    tech: ["FastAPI", "PostgreSQL", "Neo4j", "Redis", "Celery", "AWS", "LangChain"],
   },
   {
     title: "Funding vs OI Divergence Screener",

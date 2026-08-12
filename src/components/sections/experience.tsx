@@ -15,12 +15,12 @@ const roles: Role[] = [
   {
     company: "EasySpecs.ai",
     title: "Backend Engineer",
-    period: "Mar 2026 — Present",
+    period: "Mar 2025 — Present",
     highlights: [
-      "Co-built the EasySpecs headless CLI (TypeScript, Node.js) with a Factory → Pipeline → Workstation architecture across six pipelines: synthesis, coverage, remediation, link-mapping, upload, and download.",
+      "Co-design system architecture of three surfaces sharing one project cloud: the web hub for Trust Engineering (projects, change requests, SRS with AI chat), the easyspecs-cli factory that builds structured .easyspecs/context from repos, and the VS Code/Cursor/Windsurf extension for in-editor browse and push/pull.",
       "Designed an adaptive concurrency pool with duration-based pressure control, dynamically throttling parallel AI workstation execution.",
       "Implemented a pluggable agent harness supporting OpenCode, Claude Code, Gemini CLI, Cursor CLI, and Codex with unified spawn adapters.",
-      "Co-architected the context drift pipeline—comparing generated docs against reference specs—and bidirectional cloud sync with the EasySpecs REST API.",
+      "Co-architected the context drift pipeline, comparing generated docs against reference specs—and bidirectional cloud sync with the EasySpecs REST API.",
     ],
     tech: [
       "TypeScript",
@@ -111,7 +111,7 @@ export default function Experience() {
             developer tooling — from early-stage startups to client engagements.
           </p>
           <Link
-            href="https://drive.google.com/file/d/1DpTGbtE8ilCVJi2gfYVLstjY6qmVui-3/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1DpTGbtE8ilCVJi2gfYVLstjY6qmVui-3/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors mb-12"
