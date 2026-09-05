@@ -39,7 +39,7 @@ export default function Hero() {
             Hi, I&apos;m{" "}
             <span className="accent-gradient">Chima Peter</span>
             <br />
-            <span className="text-zinc-400">Software Engineer</span>
+            <span className="text-zinc-400">Backend Engineer</span>
           </motion.h1>
 
           <motion.p
@@ -48,11 +48,11 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-lg md:text-xl text-zinc-400 leading-relaxed mb-8 max-w-3xl mx-auto"
           >
-            Building production systems with{" "}
-            <span className="text-zinc-200">real-time data pipelines</span>,{" "}
-            <span className="text-zinc-200">AI orchestration</span>, and{" "}
-            <span className="text-zinc-200">enterprise SaaS</span>. I turn complex
-            requirements into scalable, maintainable code.
+            Building{" "}
+            <span className="text-zinc-200">distributed systems</span> and{" "}
+            <span className="text-zinc-200">AI infrastructure</span> across
+            fintech, SaaS, and developer tooling—from multi-tenant platforms to
+            LLM orchestration and production ops.
           </motion.p>
 
           <motion.div
@@ -90,7 +90,7 @@ export default function Hero() {
           >
             <p className="text-sm text-muted mb-4">Currently working with</p>
             <div className="flex flex-wrap gap-3 justify-center">
-              {["TypeScript", "Python", "FastAPI", "Next.js", "LangChain", "PostgreSQL", "Redis"].map(
+              {["Python", "TypeScript", "FastAPI", "NestJS", "LangGraph", "PostgreSQL", "Redis", "AWS"].map(
                 (tech) => (
                   <span
                     key={tech}

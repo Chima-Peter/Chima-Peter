@@ -23,13 +23,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chima-peter.vercel.app/"),
-  title: "Chima Peter Ojimma — Software Engineer",
+  title: "Chima Peter Ojimma — Backend Engineer",
   description:
-    "Software Engineer building production systems with real-time data pipelines, AI orchestration, and enterprise SaaS. Specialized in TypeScript, Python, FastAPI, and Next.js.",
+    "Backend Engineer with 4+ years building scalable backend systems, distributed services, and AI infrastructure. Specialized in Python, TypeScript, FastAPI, NestJS, and AWS.",
   openGraph: {
-    title: "Chima Peter Ojimma — Software Engineer",
+    title: "Chima Peter Ojimma — Backend Engineer",
     description:
-      "Building production systems with real-time data pipelines, AI orchestration, and enterprise SaaS.",
+      "Building distributed systems and AI infrastructure across fintech, SaaS, and developer tooling.",
     url: "https://chima-peter.vercel.app/",
     siteName: "Chima Peter Ojimma",
     images: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Chima Peter Ojimma - Software Engineer",
+        alt: "Chima Peter Ojimma - Backend Engineer",
       },
     ],
     locale: "en_US",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chima Peter Ojimma — Software Engineer",
+    title: "Chima Peter Ojimma — Backend Engineer",
     description:
-      "Building production systems with real-time data pipelines, AI orchestration, and enterprise SaaS.",
+      "Building distributed systems and AI infrastructure across fintech, SaaS, and developer tooling.",
     images: ["/og-image.png"],
   },
   icons: {
@@ -63,15 +63,15 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Chima Peter Ojimma",
-    "Software Engineer",
-    "Full Stack Developer",
+    "Backend Engineer",
+    "Distributed Systems",
+    "AI Infrastructure",
     "TypeScript",
     "Python",
     "FastAPI",
-    "Next.js",
-    "React",
-    "AI Engineering",
-    "Backend Developer",
+    "NestJS",
+    "LangGraph",
+    "AWS",
   ],
 };
 

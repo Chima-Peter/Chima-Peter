@@ -10,8 +10,8 @@ const highlights = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
       </svg>
     ),
-    title: "Backend & APIs",
-    description: "FastAPI, NestJS, Node.js—building scalable services that handle real traffic",
+    title: "Distributed Systems",
+    description: "Multi-tenant platforms, background processing, and event-driven services",
   },
   {
     icon: (
@@ -19,8 +19,8 @@ const highlights = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    title: "AI Integration",
-    description: "LangChain, multi-provider orchestration, and intelligent automation",
+    title: "AI Infrastructure",
+    description: "LLM orchestration, RAG, agentic workflows, and async AI pipelines",
   },
   {
     icon: (
@@ -28,8 +28,8 @@ const highlights = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    title: "Real-time Systems",
-    description: "Event-driven architectures and live data pipelines",
+    title: "Production Ops",
+    description: "End-to-end ownership from architecture through deployment and observability",
   },
 ];
 
@@ -87,14 +87,15 @@ export default function About() {
 
               <div className="space-y-4 text-zinc-300 leading-relaxed mb-10">
                 <p>
-                  I&apos;m a software engineer who enjoys working on the hard parts—the
-                  backend architecture, the data pipelines, the integrations that make
-                  products actually work at scale.
+                  Backend engineer with 4+ years building scalable backend systems,
+                  distributed services, and AI-powered applications across fintech,
+                  SaaS, and developer tooling.
                 </p>
                 <p>
-                  Recently, I&apos;ve been focused on enterprise SaaS backends, AI
-                  orchestration systems, and developer tools. I care about clean
-                  abstractions and code that&apos;s easy to maintain.
+                  Strong in multi-tenant platforms, payment and subscription systems,
+                  real-time services, and AI infrastructure—LLM orchestration, RAG,
+                  agentic workflows, and asynchronous processing. I own systems
+                  end-to-end from architecture through production operations.
                 </p>
               </div>
 
@@ -119,7 +120,7 @@ export default function About() {
 
               <div className="flex flex-wrap gap-8 pt-8 border-t border-zinc-700">
                 {[
-                  { value: "3+", label: "Years Experience" },
+                  { value: "4+", label: "Years Experience" },
                   { value: "20+", label: "Projects Shipped" },
                   { value: "15+", label: "Technologies" },
                   { value: "10+", label: "Happy Clients" },

@@ -49,7 +49,7 @@ export default function Footer() {
               chima<span className="text-accent">.</span>
             </Link>
             <p className="text-sm text-muted">
-              Building production systems that scale.
+              Backend engineer · Distributed systems · AI infrastructure
             </p>
           </div>
 

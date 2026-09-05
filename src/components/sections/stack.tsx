@@ -10,35 +10,35 @@ type StackCategory = {
 const stack: StackCategory[] = [
   {
     name: "Languages",
-    items: ["TypeScript", "Python", "Golang", "JavaScript"],
-  },
-  {
-    name: "Frontend",
-    items: ["React", "Next.js", "Vue 3", "Tailwind CSS", "Framer Motion", "Radix UI"],
+    items: ["Python", "TypeScript", "JavaScript", "Golang"],
   },
   {
     name: "Backend",
-    items: ["FastAPI", "NestJS", "Node.js", "Django", "Express"],
+    items: ["FastAPI", "NestJS", "Node.js", "Express.js", "Gin", "REST APIs"],
   },
   {
-    name: "AI/ML",
-    items: ["LangChain", "LangGraph", "OpenAI", "Gemini"],
+    name: "Frontend",
+    items: ["React", "Next.js", "Vue 3", "Tailwind CSS", "Pinia"],
+  },
+  {
+    name: "AI / ML",
+    items: ["LangChain", "LangGraph", "RAG", "LangSmith", "CrewAI"],
   },
   {
     name: "Databases",
-    items: ["PostgreSQL", "Redis", "Supabase", "Neo4j", "Prisma"],
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Elasticsearch", "Neo4j"],
   },
   {
-    name: "Infrastructure",
-    items: ["Docker", "AWS", "Celery", "Pulumi", "Sentry", "Vercel"],
+    name: "Cloud & DevOps",
+    items: ["AWS", "Docker", "Docker Swarm", "GitHub Actions", "GitLab CI/CD", "Pulumi"],
   },
   {
-    name: "Testing",
-    items: ["Jest", "Playwright", "Vitest"],
+    name: "Testing & Quality",
+    items: ["Pytest", "Jest", "Vitest", "Playwright", "OpenAPI/Swagger"],
   },
   {
     name: "Other",
-    items: ["Puppeteer", "Stripe", "Twilio", "Telegram API", "MCP Protocol"],
+    items: ["Celery", "Bull", "Stripe", "Supabase", "Prisma", "Sentry"],
   },
 ];
 

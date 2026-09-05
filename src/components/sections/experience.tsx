@@ -7,41 +7,49 @@ type Role = {
   company: string;
   title: string;
   period: string;
+  location?: string;
   highlights: string[];
   tech: string[];
 };
 
 const roles: Role[] = [
   {
-    company: "EasySpecs.ai",
+    company: "easyspecs.ai",
     title: "Backend Engineer",
-    period: "Mar 2025 — Present",
+    period: "Mar 2026 — Present",
+    location: "Spain",
     highlights: [
-      "Co-design system architecture of three surfaces sharing one project cloud: the web hub for Trust Engineering (projects, change requests, SRS with AI chat), the easyspecs-cli factory that builds structured .easyspecs/context from repos, and the VS Code/Cursor/Windsurf extension for in-editor browse and push/pull.",
-      "Designed an adaptive concurrency pool with duration-based pressure control, dynamically throttling parallel AI workstation execution.",
-      "Implemented a pluggable agent harness supporting OpenCode, Claude Code, Gemini CLI, Cursor CLI, and Codex with unified spawn adapters.",
-      "Co-architected the context drift pipeline, comparing generated docs against reference specs—and bidirectional cloud sync with the EasySpecs REST API.",
+      "Co-designed the architecture of three integrated product surfaces sharing a unified project cloud: the Trust Engineering web hub, the EasySpecs CLI factory, and the VS Code/Cursor/Windsurf extension.",
+      "Designed an adaptive concurrency pool with duration-based pressure control, dynamically throttling parallel AI workstation execution across up to 64 concurrent agents.",
+      "Implemented a pluggable agent harness supporting OpenCode, Claude Code, Gemini CLI, Cursor CLI, and Codex through unified spawn adapters.",
+      "Co-architected the context drift pipeline with bidirectional sync via the EasySpecs REST API, plus incremental update-from-churn, Graphify knowledge-graph hooks, and an ACE self-improvement loop.",
     ],
     tech: [
       "TypeScript",
       "Node.js",
       "Commander.js",
       "esbuild",
-      "ajv",
+      "AJV",
       "jsonrepair",
       "Git Worktrees",
+      "VS Code Extension API",
       "REST APIs",
+      "AWS S3/CloudFront",
+      "Pulumi",
+      "GitLab CI/CD",
     ],
   },
   {
     company: "Gluecharm",
-    title: "Full Stack Developer",
+    title: "Fullstack Developer",
     period: "Oct 2025 — Mar 2026",
+    location: "Spain",
     highlights: [
-      "Built a multi-provider LLM routing system with automatic failover across 7 providers.",
-      "Designed async task processing with Celery/Redis for content generation and document pipelines.",
-      "Built a dependency injection layer with 100+ registered providers via a centralized IoC container.",
-      "Shipped Camping Manager: multi-tenant reservations ops on Supabase Edge Functions, Stripe multi-location payments, dynamic pricing, and a WordPress plugin bridge for guest booking embeds.",
+      "Co-architected a primary/fallback LLM routing system with TTL-based health tracking and automatic failover across 7 providers.",
+      "Co-built the EasySpecs VS Code/Cursor extension and headless CLI, orchestrating 40+ specialized AI agent prompts across multi-phase workflows.",
+      "Designed a background task processing layer using Celery and Redis/Valkey for content generation, SRS pipelines, and AI usage persistence.",
+      "Co-built a centralized dependency-injection architecture with 100+ registered providers across sync and async workflows.",
+      "Shipped ADI Camping: multi-tenant reservations on 37 Supabase Edge Functions, Stripe multi-location payments, dynamic pricing, and a WordPress booking embed.",
     ],
     tech: [
       "Python",
@@ -50,34 +58,91 @@ const roles: Role[] = [
       "PostgreSQL",
       "Redis",
       "Celery",
+      "LangChain",
+      "LangGraph",
       "Vue 3",
       "TypeScript",
       "Supabase",
-      "Stripe",
-      "LangChain",
+      "AWS",
+      "Pulumi",
       "Docker",
     ],
   },
   {
     company: "Manom",
     title: "Backend & DevOps Engineer",
-    period: "Feb 2025 — Oct 2025",
+    period: "Apr 2024 — Sep 2025",
+    location: "Africa",
     highlights: [
-      "Built a multi-tenant fintech SaaS backend for African SMBs — invoicing, payments, payroll, and analytics.",
-      "Engineered a full subscription lifecycle system with trials, proration, grace periods, and auto-downgrade.",
+      "Built the backend for a multi-tenant fintech SaaS for African SMBs — invoicing, fiat/crypto payments, payroll, accounting, KYC, analytics, and RBAC.",
+      "Engineered a full subscription lifecycle with trials, proration, grace periods, Redis idempotency locks, and auto-downgrade on payment failure.",
       "Created a real-time notification system using SSE with Redis Pub/Sub for cross-instance delivery.",
       "Implemented async background jobs with Bull queues, rate limiting, and automatic cleanup.",
+      "Built Manom AI (FastAPI + LangGraph + Gemini) for agentic invoice/onboarding workflows with MongoDB-backed chat memory.",
     ],
-    tech: ["TypeScript", "NestJS", "Prisma", "PostgreSQL", "Redis", "Bull", "Node.js", "Docker Swarm", "GitHub Actions"],
+    tech: [
+      "TypeScript",
+      "NestJS",
+      "Prisma",
+      "PostgreSQL",
+      "Redis",
+      "Bull",
+      "Node.js",
+      "Docker Swarm",
+      "GitHub Actions",
+      "FastAPI",
+      "LangGraph",
+      "Gemini",
+      "MongoDB",
+    ],
   },
   {
-    company: "Freelance",
-    title: "Fullstack Developer",
-    period: "2023 — Present",
+    company: "Architechture",
+    title: "Full Stack Developer",
+    period: "Jun 2023 — Mar 2024",
+    location: "Nigeria",
     highlights: [
-      "Delivered 10+ client projects across e-commerce, fintech, logistics, AI chatbots, and crypto wallets.",
+      "Built Tales of Logistics, a podcast and media platform with React/Next.js interfaces and content publishing workflows.",
+      "Developed Melch, a full-stack e-commerce platform with product discovery, cart/checkout, and payment API integrations.",
+      "Built StarExpress logistics management with delivery requests, tracking, and customer data APIs.",
+      "Contributed to NestJS backend services with PostgreSQL, Prisma, Redis, auth, and third-party integrations.",
     ],
-    tech: ["Next.js", "NestJS", "FastAPI", "AWS", "Docker", "GitHub Actions"],
+    tech: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "NestJS",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "Paystack",
+      "Docker",
+      "GitHub Actions",
+    ],
+  },
+  {
+    company: "BuildWithSeamless",
+    title: "Frontend Developer",
+    period: "Aug 2022 — Mar 2023",
+    location: "Nigeria",
+    highlights: [
+      "Built and maintained responsive React + TypeScript interfaces for a cloud-based HR and workforce management platform.",
+      "Developed a shared component system with Storybook, standardizing 20+ reusable components across product surfaces.",
+      "Integrated REST APIs with JWT auth, centralized error handling, and refresh-token retry logic.",
+      "Built multi-step forms with React Hook Form and Zod; reduced initial JS payload by ~30% via Webpack optimization.",
+    ],
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "React Hook Form",
+      "Zod",
+      "Axios",
+      "Storybook",
+      "Webpack",
+      "REST APIs",
+    ],
   },
 ];
 
@@ -111,7 +176,7 @@ export default function Experience() {
             developer tooling — from early-stage startups to client engagements.
           </p>
           <Link
-            href="https://drive.google.com/file/d/1DpTGbtE8ilCVJi2gfYVLstjY6qmVui-3/view?usp=sharing"
+            href="https://drive.google.com/file/d/1RYIfMTz2oAgwl72lBbnZ4gd3wtytKiBt/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors mb-12"
@@ -165,6 +230,12 @@ export default function Experience() {
                       </h3>
                       <p className="text-accent font-medium text-sm">
                         {role.company}
+                        {role.location ? (
+                          <span className="text-zinc-500 font-normal">
+                            {" "}
+                            · {role.location}
+                          </span>
+                        ) : null}
                       </p>
                     </div>
                     <span className="text-sm text-zinc-500 font-mono shrink-0">

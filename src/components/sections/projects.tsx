@@ -24,25 +24,26 @@ const projects: Project[] = [
     title: "EasySpecs.ai",
     category: "Developer Tools",
     description:
-      "Co-built EasySpecs.ai, a Spec-Driven Development platform: Vue 3 web app, headless Node CLI, and VS Code/Cursor/Windsurf extension. The CLI runs a multi-phase factory that scans git repos into grounded application context (features, services, data, infra), with concurrent AI workstations (default ~45), incremental update-from-churn, drift checks vs reference specs, Graphify knowledge-graph hooks, and an ACE learning loop, then syncs .easyspecs/context to the cloud. The web app covers project/change-request workspaces, streaming SRS chat and auto-generate (credit-gated), discovery docs, bidirectional Jira, org sharing/git repos, EN/ES/CA i18n, and SEO prerendered marketing (pricing, Code Audit, Labs). The extension is a sidebar UI for browse/sign-in/sync that delegates analysis to the CLI.",
+      "Co-built EasySpecs.ai end-to-end across three surfaces: a Vue 3/TypeScript web app with project/change-request workspaces, streaming SRS chat, bidirectional Jira, org sharing, EN/ES/CA i18n, and SEO marketing; a headless Node.js CLI that scans git repos into grounded application context using up to 64 concurrent AI workstations, incremental update-from-churn, Graphify knowledge-graph hooks, and an ACE learning loop; and a VS Code/Cursor/Windsurf extension for in-editor browse, sign-in, and cloud sync. Deployed on AWS via Pulumi with GitLab CI/CD; backend powered by FastAPI, Neo4j, PostgreSQL, and Supabase Auth with Permify RBAC.",
     problem:
       "Writing software requirements is tedious and often skipped. Documentation lives separately from code and becomes outdated.",
     tech: [
       "Vue 3",
       "TypeScript",
-      "Mermaid",
-      "Feature-Sliced Design",
-      "Playwright",
+      "Vite",
+      "Pinia",
       "VS Code Extension API",
       "Node.js",
-      "Commander",
+      "Commander.js",
+      "esbuild",
       "ajv",
-      "OpenCode / Claude Code harness adapters",
-      "Graphify",
-      "Gluecharm System Manager & AI Manager APIs",
+      "FastAPI",
+      "Neo4j",
+      "PostgreSQL",
+      "Supabase Auth",
+      "Permify",
       "Jira REST API",
       "Sentry",
-      "Google Analytics",
       "AWS S3/CloudFront",
       "Pulumi",
       "GitLab CI/CD",
@@ -65,7 +66,7 @@ const projects: Project[] = [
     title: "StudyBuddy",
     category: "EdTech",
     description:
-      "Built a FastAPI-based study companion that lets students upload materials, ingest them into a hybrid search index, tutor via grounded RAG chat, and auto-generate chapter study cards with MCQ quizzes — covering auth (JWT + Redis blacklist), signed Supabase uploads, async parse→chunk→embed→index pipelines, LangGraph agents over WebSocket, cursor-paginated conversations/notifications with live SSE, and resilient RabbitMQ workers with TTL retries and DLQs for ingest, study cards, and memory extract.",
+      "Built a FastAPI-based study companion that lets students upload materials, ingest them into a hybrid search index, tutor via grounded RAG chat, and auto-generate chapter study cards with MCQ quizzes — covering JWT + Redis blacklist auth, signed Supabase uploads, an async parse→chunk→embed→index pipeline, and LangGraph agents over WebSocket. Implemented cursor-paginated conversations and live SSE notifications, plus resilient RabbitMQ workers with TTL retries and dead-letter queues.",
     problem:
       "Students juggle separate tools for notes, tutoring, and quizzes—with no grounding in their own course materials—so study time is fragmented and hard to scale.",
     tech: [
@@ -91,10 +92,10 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    title: "Camping Manager",
+    title: "ADI Camping",
     category: "Enterprise SaaS",
     description:
-      "Built a multi-tenant camping property management and booking platform (staff ops + public guest flows) covering reservations, availability, seasonal pricing, check-in/out, billing, rentals, shop, campsite maps, and Spanish tourism compliance (police reports, tourist tax), with multi-location tenancy via reactive Pinia stores, public booking/payment/pre-check-in APIs, Stripe payments, Twilio messaging, AI guest-document OCR (Gemini, no image retention), and Vertex AI EU RAG staff/guest chat—plus a WordPress Gutenberg/shortcode embed plugin, rules engines for pricing/cancellation/rentals, and AWS S3 + CloudFront delivery via Pulumi.",
+      "Built a full-stack multi-tenant camping property management and booking platform covering staff operations and public guest flows: reservations, seasonal availability, check-in/out, billing, rentals, shop, campsite maps, and Spanish tourism compliance (police reports, tourist tax). Integrated Stripe payments, Twilio messaging, AI guest-document OCR via Gemini, Vertex AI EU RAG for staff/guest chat, a WordPress Gutenberg/shortcode embed plugin, json-rules-engine for pricing/cancellation/rentals, and AWS S3 + CloudFront via Pulumi.",
     problem:
       "Campground operators managed bookings manually across multiple properties—leading to double bookings, missed payments, and communication gaps with guests.",
     tech: [
@@ -140,7 +141,7 @@ const projects: Project[] = [
     title: "Tales of Logistics",
     category: "Content Management",
     description:
-      "Public marketing/content site for a logistics podcast and learning brand. One Next.js app serves episodes, interviews, customs cuts, and blog nuggets from a Postgres content store—moderated via isApproved/isDeleted—with Nodemailer for contact, partner, and newsletter forms. No staff ops product; pages fetch Route Handlers under /api/* and render Cloudinary-backed media.",
+      "Public marketing/content site for a logistics podcast and learning brand. One Next.js app serves episodes, interviews, customs cuts, and blog nuggets from a Postgres content store—moderated via isApproved/isDeleted—with Nodemailer for contact, partner, and newsletter forms.",
     problem:
       "Needed a public site to publish podcasts, videos, customs clips, and blog content with moderated visibility and inbound contact/partner forms—without a separate ops backend.",
     tech: [
@@ -208,8 +209,8 @@ export default function Projects() {
             Production systems I&apos;ve built
           </h2>
           <p className="text-zinc-400 max-w-2xl mb-12">
-            From AI orchestration to real-time financial systems. Each project
-            solves a real business problem with scalable, production-ready code.
+            From AI orchestration to multi-tenant SaaS. Each project solves a
+            real business problem with scalable, production-ready code.
           </p>
         </motion.div>
 
