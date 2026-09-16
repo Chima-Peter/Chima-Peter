@@ -71,7 +71,7 @@ export default function Navbar() {
               </svg>
             </Link>
             <Link
-              href="https://drive.google.com/file/d/1RYIfMTz2oAgwl72lBbnZ4gd3wtytKiBt/view?usp=sharing"
+              href="https://drive.google.com/file/d/1aqihYJLTIkguUiNOfhTBflgzY6HDMTIc/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium rounded-full border border-accent/50 text-accent hover:border-accent hover:text-white hover:bg-accent/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all duration-300"
@@ -138,7 +138,7 @@ export default function Navbar() {
                   </Link>
                 </div>
                 <Link
-                  href="https://drive.google.com/file/d/1RYIfMTz2oAgwl72lBbnZ4gd3wtytKiBt/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1aqihYJLTIkguUiNOfhTBflgzY6HDMTIc/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-full border border-accent/50 text-accent hover:border-accent hover:text-white hover:bg-accent/10 transition-all duration-300"

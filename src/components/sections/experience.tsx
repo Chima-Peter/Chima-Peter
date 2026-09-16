@@ -19,10 +19,12 @@ const roles: Role[] = [
     period: "Mar 2026 — Present",
     location: "Spain",
     highlights: [
-      "Co-designed the architecture of three integrated product surfaces sharing a unified project cloud: the Trust Engineering web hub, the EasySpecs CLI factory, and the VS Code/Cursor/Windsurf extension.",
-      "Designed an adaptive concurrency pool with duration-based pressure control, dynamically throttling parallel AI workstation execution across up to 64 concurrent agents.",
-      "Implemented a pluggable agent harness supporting OpenCode, Claude Code, Gemini CLI, Cursor CLI, and Codex through unified spawn adapters.",
-      "Co-architected the context drift pipeline with bidirectional sync via the EasySpecs REST API, plus incremental update-from-churn, Graphify knowledge-graph hooks, and an ACE self-improvement loop.",
+      "Co-built the EasySpecs headless CLI around a Factory → Pipeline → Workstation architecture with six pipelines for synthesis, coverage, remediation, link mapping, upload, and download.",
+      "Designed an adaptive concurrency pool that uses duration-based pressure control to throttle parallel AI workstation execution.",
+      "Implemented a pluggable agent harness for OpenCode, Claude Code, Gemini CLI, Cursor CLI, and Codex, with optional remote workers via REST API.",
+      "Built isolated git worktrees and JSON snapshot persistence for resume-on-interrupt and automatic stale-worktree recovery.",
+      "Co-architected context drift analysis and zero-reference remediation pools that document uncovered code paths.",
+      "Added schema validation and malformed-output recovery, structured CI output, performance reports, and bidirectional EasySpecs cloud sync.",
     ],
     tech: [
       "TypeScript",
@@ -32,11 +34,8 @@ const roles: Role[] = [
       "AJV",
       "jsonrepair",
       "Git Worktrees",
-      "VS Code Extension API",
       "REST APIs",
-      "AWS S3/CloudFront",
-      "Pulumi",
-      "GitLab CI/CD",
+      "Stripe",
     ],
   },
   {
@@ -45,11 +44,12 @@ const roles: Role[] = [
     period: "Oct 2025 — Mar 2026",
     location: "Spain",
     highlights: [
-      "Co-architected a primary/fallback LLM routing system with TTL-based health tracking and automatic failover across 7 providers.",
-      "Co-built the EasySpecs VS Code/Cursor extension and headless CLI, orchestrating 40+ specialized AI agent prompts across multi-phase workflows.",
-      "Designed a background task processing layer using Celery and Redis/Valkey for content generation, SRS pipelines, and AI usage persistence.",
-      "Co-built a centralized dependency-injection architecture with 100+ registered providers across sync and async workflows.",
-      "Shipped ADI Camping: multi-tenant reservations on 37 Supabase Edge Functions, Stripe multi-location payments, dynamic pricing, and a WordPress booking embed.",
+      "Architected an event-driven, multi-tenant microservices platform for AI-powered content generation using Neo4j and PostgreSQL in a dual-persistence design.",
+      "Designed vendor MIME-type API versioning for backward-compatible contract evolution without URL proliferation.",
+      "Built a schema-driven artifact system where JSON schemas define content types, relationships, and AI-editable fields.",
+      "Implemented RFC 6902 JSON Patch editing for minimal, schema-validated AI changes, reducing token usage by about 60% and protecting unchanged data.",
+      "Provisioned AWS infrastructure with Pulumi and automated dev, staging, and production deployments through GitLab CI/CD.",
+      "Integrated LangChain and LangGraph for multi-provider routing by complexity, rate limiting, and optional Arize Phoenix tracing.",
     ],
     tech: [
       "Python",
@@ -66,19 +66,21 @@ const roles: Role[] = [
       "AWS",
       "Pulumi",
       "Docker",
+      "GitLab CI/CD",
     ],
   },
   {
     company: "Manom",
     title: "Backend & DevOps Engineer",
-    period: "Apr 2024 — Sep 2025",
+    period: "Apr 2023 — Sep 2025",
     location: "Africa",
     highlights: [
-      "Built the backend for a multi-tenant fintech SaaS for African SMBs — invoicing, fiat/crypto payments, payroll, accounting, KYC, analytics, and RBAC.",
-      "Engineered a full subscription lifecycle with trials, proration, grace periods, Redis idempotency locks, and auto-downgrade on payment failure.",
-      "Created a real-time notification system using SSE with Redis Pub/Sub for cross-instance delivery.",
-      "Implemented async background jobs with Bull queues, rate limiting, and automatic cleanup.",
-      "Built Manom AI (FastAPI + LangGraph + Gemini) for agentic invoice/onboarding workflows with MongoDB-backed chat memory.",
+      "Engineered a modular NestJS/TypeScript fintech backend with 246 API endpoints across 31 modules for invoicing, accounting, payroll, subscriptions, CRM, wallets, and analytics.",
+      "Built Redis- and Bull-powered processing for invoice generation, payment provisioning, subscription charging, retries, reminders, and grace periods.",
+      "Integrated Paystack, NOWPayments, and Finecore for fiat and crypto payments, virtual accounts, wallets, transfers, FX, and identity verification.",
+      "Delivered invoice workflows with partial payments, fiat/crypto checkout, PDF generation, cloud storage, scheduled delivery, and overdue notifications.",
+      "Built a Gemini-powered financial assistant using LangChain tool calling across six tools, backed by FastAPI and MongoDB chat history.",
+      "Delivered production infrastructure with SSE notifications, structured logging, readiness checks, Docker Swarm, Nginx, automated TLS, rolling deployments, and rollback protection.",
     ],
     tech: [
       "TypeScript",
@@ -94,31 +96,10 @@ const roles: Role[] = [
       "LangGraph",
       "Gemini",
       "MongoDB",
-    ],
-  },
-  {
-    company: "Architechture",
-    title: "Full Stack Developer",
-    period: "Jun 2023 — Mar 2024",
-    location: "Nigeria",
-    highlights: [
-      "Built Tales of Logistics, a podcast and media platform with React/Next.js interfaces and content publishing workflows.",
-      "Developed Melch, a full-stack e-commerce platform with product discovery, cart/checkout, and payment API integrations.",
-      "Built StarExpress logistics management with delivery requests, tracking, and customer data APIs.",
-      "Contributed to NestJS backend services with PostgreSQL, Prisma, Redis, auth, and third-party integrations.",
-    ],
-    tech: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "NestJS",
-      "PostgreSQL",
-      "Prisma",
-      "Redis",
       "Paystack",
-      "Docker",
-      "GitHub Actions",
+      "NOWPayments",
+      "Finecore",
+      "Nginx",
     ],
   },
   {
@@ -176,7 +157,7 @@ export default function Experience() {
             developer tooling — from early-stage startups to client engagements.
           </p>
           <Link
-            href="https://drive.google.com/file/d/1RYIfMTz2oAgwl72lBbnZ4gd3wtytKiBt/view?usp=sharing"
+            href="https://drive.google.com/file/d/1aqihYJLTIkguUiNOfhTBflgzY6HDMTIc/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors mb-12"

@@ -87,15 +87,16 @@ export default function About() {
 
               <div className="space-y-4 text-zinc-300 leading-relaxed mb-10">
                 <p>
-                  Backend engineer with 4+ years building scalable backend systems,
-                  distributed services, and AI-powered applications across fintech,
-                  SaaS, and developer tooling.
+                  Backend engineer with 4+ years architecting production-grade
+                  backend systems, distributed services, and AI-powered applications
+                  across fintech, SaaS, and developer tooling.
                 </p>
                 <p>
-                  Strong in multi-tenant platforms, payment and subscription systems,
-                  real-time services, and AI infrastructure—LLM orchestration, RAG,
-                  agentic workflows, and asynchronous processing. I own systems
-                  end-to-end from architecture through production operations.
+                  Strong with Python, TypeScript, Node.js, PostgreSQL, Redis, AWS,
+                  and asynchronous processing. I&apos;ve built multi-tenant platforms,
+                  payment systems, real-time services, and AI workflows involving
+                  6+ tools and up to 64 concurrent agents—owning systems end-to-end
+                  from architecture through production operations.
                 </p>
               </div>
 
