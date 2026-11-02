@@ -1,22 +1,33 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Source_Sans_3, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import Navbar from "@/components/navigation/navbar";
-import Footer from "@/components/navigation/footer";
+import {
+  ThemeProvider,
+  themeInitScript,
+} from "@/components/theme/theme-provider";
+import CursorGlow from "@/components/layout/cursor-glow";
 
-const inter = Inter({
-  variable: "--font-inter",
+const fraunces = Fraunces({
+  variable: "--font-display",
+  subsets: ["latin"],
+});
+
+const sourceSans = Source_Sans_3({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains",
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0b",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#eef1f4" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0f12" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
@@ -34,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Chima Peter Ojimma",
     images: [
       {
-        url: "/og-image.png",
+        url: "/chima_ojimma.jpeg",
         width: 1200,
         height: 630,
         alt: "Chima Peter Ojimma - Backend Engineer",
@@ -48,7 +59,7 @@ export const metadata: Metadata = {
     title: "Chima Peter Ojimma — Backend Engineer",
     description:
       "Building distributed systems and AI infrastructure across fintech, SaaS, and developer tooling.",
-    images: ["/og-image.png"],
+    images: ["/chima_ojimma.jpeg"],
   },
   icons: {
     icon: [
@@ -81,12 +92,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${sourceSans.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="font-sans antialiased" suppressHydrationWarning>
-        <div className="noise" />
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <ThemeProvider>
+          <div className="noise" aria-hidden />
+          <CursorGlow />
+          <div className="relative z-10">{children}</div>
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
