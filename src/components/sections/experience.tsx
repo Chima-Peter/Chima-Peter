@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { RESUME_HREF } from "@/components/layout/nav-links";
+import { RESUME_DOWNLOAD_NAME, RESUME_HREF } from "@/components/layout/nav-links";
 
 type Role = {
   company: string;
@@ -150,8 +150,7 @@ export default function Experience() {
         </p>
         <Link
           href={RESUME_HREF}
-          target="_blank"
-          rel="noopener noreferrer"
+          download={RESUME_DOWNLOAD_NAME}
           className="mb-8 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-accent hover:text-accent-hover"
         >
           Download resume →
