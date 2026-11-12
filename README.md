@@ -10,7 +10,7 @@
 
 Backend engineer with 4+ years architecting production-grade systems, distributed services, and AI-powered applications across fintech, SaaS, and developer tooling.
 
-I work most at the intersection of reliability and product impact: clear APIs, durable pipelines, and infrastructure you can operate without guesswork. Recent focus spans developer tooling (**EasySpecs**), multi-market commerce (**Dukka**), and AI study workflows (**StudyBuddy**).
+I work most at the intersection of reliability and product impact: clear APIs, durable pipelines, and infrastructure you can operate without guesswork. Recent focus spans developer tooling (**EasySpecs**), camping SaaS (**ADI Camping**), fintech (**ManomPay**), and commerce (**Dukka**).
 
 ---
 
@@ -48,7 +48,31 @@ Deployed on AWS via Pulumi with GitLab CI/CD; backend powered by FastAPI, Neo4j,
 
 ---
 
-### Dukka — [Live](https://www.dukka.store) · [Backend](https://github.com/Chima-Peter/Dukka) · [Storefront](https://github.com/Chima-Peter/dukka_store)
+### [ADI Camping](https://adicamping.com)
+
+![ADI Camping](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/adi-camping.webp)
+
+**Problem:** Campground operators managed bookings manually across multiple properties — leading to double bookings, missed payments, and communication gaps with guests.
+
+**Solution:** Full-stack multi-tenant camping property management and booking platform covering staff operations and public guest flows: reservations, seasonal availability, check-in/out, billing, rentals, shop, campsite maps, and Spanish tourism compliance. Integrated Stripe payments, Twilio messaging, AI guest-document OCR via Gemini, Vertex AI RAG for staff/guest chat, a WordPress Gutenberg/shortcode embed plugin, and AWS via Pulumi.
+
+`Vue 3` `Tailwind` `Supabase` `Stripe` `Twilio` `Gemini` `Vertex AI` `Pulumi` `WordPress`
+
+---
+
+### [ManomPay](https://manomsolutions.com)
+
+![ManomPay](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/manom.webp)
+
+**Problem:** SMEs, freelancers, and entrepreneurs struggled with fragmented financial tools — invoices in one app, payments in another, expenses tracked manually — leading to cash-flow blind spots.
+
+**Solution:** All-in-one fintech platform consolidating invoicing, payment processing, expense tracking, and financial reporting. Businesses create and send invoices, accept payments via multiple channels (including Paystack), and get real-time cash-flow visibility with automated reminders and local payment integrations.
+
+`Next.js` `TypeScript` `Node.js` `PostgreSQL` `Prisma` `Paystack` `Redis`
+
+---
+
+### Dukka — [Backend](https://github.com/Chima-Peter/Dukka) · [Storefront](https://github.com/Chima-Peter/dukka_store)
 
 ![Dukka](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/dukka.webp)
 
@@ -74,18 +98,6 @@ Deployed on AWS via Pulumi with GitLab CI/CD; backend powered by FastAPI, Neo4j,
 
 ---
 
-### [ADI Camping](https://adicamping.com)
-
-![ADI Camping](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/adi-camping.webp)
-
-**Problem:** Campground operators managed bookings manually across multiple properties — leading to double bookings, missed payments, and communication gaps with guests.
-
-**Solution:** Full-stack multi-tenant camping property management and booking platform covering staff operations and public guest flows: reservations, seasonal availability, check-in/out, billing, rentals, shop, campsite maps, and Spanish tourism compliance. Integrated Stripe payments, Twilio messaging, AI guest-document OCR via Gemini, Vertex AI RAG for staff/guest chat, a WordPress Gutenberg/shortcode embed plugin, and AWS via Pulumi.
-
-`Vue 3` `Tailwind` `Supabase` `Stripe` `Twilio` `Gemini` `Vertex AI` `Pulumi` `WordPress`
-
----
-
 ### System Manager API
 
 **Problem:** GlueCharm and EasySpecs.ai (web, CLI, and IDE extension) needed a shared backend for software specification projects — with isolated workspaces, role-based access, Jira integration, and AI capabilities.
@@ -93,18 +105,6 @@ Deployed on AWS via Pulumi with GitLab CI/CD; backend powered by FastAPI, Neo4j,
 **Solution:** Core FastAPI backend powering GlueCharm and EasySpecs. Manages organizations, workspaces, projects, and specification artifacts with RBAC. Syncs with Jira, links git repositories for code context, and runs background workers for invitations, exports, and AI-powered content generation. Includes a dedicated AI microservice that orchestrates multiple providers (OpenAI, Gemini, Groq, Mistral) with intelligent routing. API-only — no public UI.
 
 `FastAPI` `PostgreSQL` `Neo4j` `Redis` `Celery` `Supabase` `LangChain` `AWS` `Pulumi`
-
----
-
-### [ManomPay](https://manomsolutions.com)
-
-![ManomPay](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/manom.webp)
-
-**Problem:** SMEs, freelancers, and entrepreneurs struggled with fragmented financial tools — invoices in one app, payments in another, expenses tracked manually — leading to cash-flow blind spots.
-
-**Solution:** All-in-one fintech platform consolidating invoicing, payment processing, expense tracking, and financial reporting. Businesses create and send invoices, accept payments via multiple channels (including Paystack), and get real-time cash-flow visibility with automated reminders and local payment integrations.
-
-`Next.js` `TypeScript` `Node.js` `PostgreSQL` `Prisma` `Paystack` `Redis`
 
 ---
 

@@ -25,9 +25,9 @@ export const projects: Project[] = [
     blurb:
       "Web, CLI, and IDE extension that keep software requirements next to the code.",
     description:
-      "Co-built EasySpecs.ai end-to-end across three surfaces: a Vue 3/TypeScript web app with project/change-request workspaces, streaming SRS chat, bidirectional Jira, org sharing, EN/ES/CA i18n, and SEO marketing; a headless Node.js CLI that scans git repos into grounded application context using up to 64 concurrent AI workstations; and a VS Code/Cursor/Windsurf extension for in-editor browse, sign-in, and cloud sync.",
+      "Co-built EasySpecs.ai end-to-end across three surfaces that share one project cloud: the web app is the Trust Engineering hub for projects, change requests, streaming SRS chat, bidirectional Jira, org sharing, and i18n; the CLI is a headless factory that scans git repos into grounded application context with up to 64 concurrent AI workstations, incremental updates, and CI-friendly output; the IDE extension (VS Code / Cursor / Windsurf) handles in-editor browse, sign-in, and cloud sync while heavy work runs via the bundled CLI. Deployed on AWS via Pulumi with GitLab CI/CD; backend powered by FastAPI, Neo4j, PostgreSQL, and Supabase Auth.",
     problem:
-      "Writing software requirements is tedious and often skipped. Documentation lives separately from code and becomes outdated.",
+      "Writing software requirements is tedious and often skipped. When documentation exists, it lives separately from the code and quickly becomes outdated.",
     tech: [
       "Vue 3",
       "TypeScript",
@@ -45,16 +45,61 @@ export const projects: Project[] = [
     image: "/projects/easyspecs.webp",
     span: "tall",
     links: [
-      { label: "Web", href: "https://easyspecs.ai" },
+      { label: "Visit website", href: "https://easyspecs.ai" },
       {
-        label: "Extension",
+        label: "View extension",
         href: "https://open-vsx.org/extension/easyspecs/easyspecs-ai",
       },
       {
-        label: "CLI",
+        label: "View CLI package",
         href: "https://www.npmjs.com/package/@gluecharm-lab/easyspecs-cli",
       },
     ],
+    featured: true,
+  },
+  {
+    title: "ADI Camping",
+    category: "Enterprise SaaS",
+    blurb:
+      "Multi-tenant camping PMS with guest booking, Stripe, and WordPress embed.",
+    description:
+      "Full-stack multi-tenant camping property management and booking platform covering staff operations and public guest flows: reservations, seasonal availability, check-in/out, billing, rentals, shop, campsite maps, and Spanish tourism compliance. Integrated Stripe payments, Twilio messaging, AI guest-document OCR via Gemini, Vertex AI RAG for staff/guest chat, a WordPress Gutenberg/shortcode embed plugin, and AWS via Pulumi.",
+    problem:
+      "Campground operators managed bookings manually across multiple properties — leading to double bookings, missed payments, and communication gaps with guests.",
+    tech: [
+      "Vue 3",
+      "Tailwind CSS",
+      "Supabase",
+      "Stripe",
+      "Twilio",
+      "Gemini",
+      "Vertex AI",
+      "Pulumi",
+      "WordPress",
+    ],
+    image: "/projects/adi-camping.webp",
+    links: [{ label: "Visit website", href: "https://adicamping.com" }],
+    featured: true,
+  },
+  {
+    title: "ManomPay",
+    category: "Fintech",
+    blurb:
+      "Invoicing, payments, expenses, and cash-flow reporting in one dashboard.",
+    description:
+      "All-in-one fintech platform consolidating invoicing, payment processing, expense tracking, and financial reporting. Businesses create and send invoices, accept payments via multiple channels (including Paystack), and get real-time cash-flow visibility with automated reminders and local payment integrations.",
+    problem:
+      "SMEs, freelancers, and entrepreneurs struggled with fragmented financial tools — invoices in one app, payments in another, expenses tracked manually — leading to cash-flow blind spots.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Prisma",
+      "Paystack",
+    ],
+    image: "/projects/manom.webp",
+    links: [{ label: "Visit website", href: "https://manomsolutions.com" }],
     featured: true,
   },
   {
@@ -63,9 +108,9 @@ export const projects: Project[] = [
     blurb:
       "Cross-country ecommerce for African markets — market-specific catalogs, local-currency pricing, Paystack checkout, and fulfillment.",
     description:
-      "Cross-country ecommerce platform for product discovery, purchasing, and fulfillment across African markets. NestJS API (market-scoped catalogs, fixed local-currency pricing, promotions, Paystack payments, warehouses/shipments, dual customer/staff JWT + RBAC, BullMQ workers) plus a Next.js storefront with IP market detection, guest+auth carts, orders, profile, and reviews.",
+      "Cross-country ecommerce platform for product discovery, purchasing, and fulfillment across African markets. The NestJS API handles multi-market catalog, cart/checkout, orders, Paystack payments, warehouses/shipments, promotions/coupons, dual customer/staff JWT + RBAC, and BullMQ workers for mail and order lifecycle. The Next.js storefront adds IP market detection, guest + authenticated carts, search, checkout, orders, profile, and reviews.",
     problem:
-      "Selling across African markets needs market-specific catalogs, local pricing, and reliable checkout/fulfillment — not a generic single-market store bolted onto a shared backend.",
+      "Selling across African markets needs market-specific catalogs, fixed local-currency pricing, and reliable checkout/fulfillment — not a generic single-market store bolted onto a shared backend.",
     tech: [
       "NestJS",
       "Prisma",
@@ -82,10 +127,9 @@ export const projects: Project[] = [
     image: "/projects/dukka.webp",
     span: "wide",
     links: [
-      { label: "Live", href: "https://www.dukka.store" },
-      { label: "Backend", href: "https://github.com/Chima-Peter/Dukka" },
+      { label: "View API repo", href: "https://github.com/Chima-Peter/Dukka" },
       {
-        label: "Storefront",
+        label: "View storefront repo",
         href: "https://github.com/Chima-Peter/dukka_store",
       },
     ],
@@ -97,9 +141,9 @@ export const projects: Project[] = [
     blurb:
       "Upload course materials, hybrid search, grounded RAG tutoring, and auto-generated study cards.",
     description:
-      "FastAPI study companion: ingest into hybrid search, tutor via grounded RAG chat, and auto-generate chapter study cards with MCQ quizzes — JWT + Redis auth, signed Supabase uploads, async parse→chunk→embed→index pipeline, and LangGraph agents over WebSocket.",
+      "FastAPI + Next.js study companion that lets students upload materials, ingest them into a hybrid search index, tutor via grounded RAG chat, and auto-generate chapter study cards with MCQ quizzes. Covers JWT + Redis auth, signed Supabase uploads, an async parse→chunk→embed→index pipeline, LangGraph agents over WebSocket, live SSE notifications, and RabbitMQ workers with retries and dead-letter queues.",
     problem:
-      "Students juggle separate tools for notes, tutoring, and quizzes—with no grounding in their own course materials.",
+      "Students juggle separate tools for notes, tutoring, and quizzes — with no grounding in their own course materials — so study time is fragmented and hard to scale.",
     tech: [
       "Python",
       "FastAPI",
@@ -114,36 +158,15 @@ export const projects: Project[] = [
     image: "/projects/studybuddy.webp",
     span: "tall",
     links: [
-      { label: "Backend", href: "https://github.com/Chima-Peter/study_buddy" },
       {
-        label: "Frontend",
+        label: "View API repo",
+        href: "https://github.com/Chima-Peter/study_buddy",
+      },
+      {
+        label: "View app repo",
         href: "https://github.com/Chima-Peter/study_buddy_app",
       },
     ],
-    featured: true,
-  },
-  {
-    title: "ADI Camping",
-    category: "Enterprise SaaS",
-    blurb:
-      "Multi-tenant camping PMS with guest booking, Stripe, and WordPress embed.",
-    description:
-      "Full-stack multi-tenant camping property management and booking: reservations, seasonal availability, check-in/out, billing, maps, Spanish tourism compliance, Stripe, Twilio, Gemini OCR, Vertex AI RAG, and a WordPress booking plugin.",
-    problem:
-      "Campground operators managed bookings manually across multiple properties—double bookings, missed payments, and communication gaps.",
-    tech: [
-      "Vue 3",
-      "Tailwind CSS",
-      "Supabase",
-      "Stripe",
-      "Twilio",
-      "Gemini",
-      "Vertex AI",
-      "Pulumi",
-      "WordPress",
-    ],
-    image: "/projects/adi-camping.webp",
-    links: [{ label: "Live", href: "https://adicamping.com" }],
     featured: true,
   },
   {
@@ -152,9 +175,9 @@ export const projects: Project[] = [
     blurb:
       "Shared backend for GlueCharm and EasySpecs — orgs, workspaces, specs, and AI orchestration.",
     description:
-      "Core backend powering GlueCharm and EasySpecs.ai. Manages organizations, workspaces, projects, and specification artifacts with role-based access. Includes a dedicated AI microservice for multi-provider orchestration.",
+      "Core FastAPI backend powering GlueCharm and EasySpecs. Manages organizations, workspaces, projects, and specification artifacts with RBAC. Syncs with Jira, links git repositories for code context, and runs background workers for invitations, exports, and AI-powered content generation. Includes a dedicated AI microservice that orchestrates multiple providers (OpenAI, Gemini, Groq, Mistral) with intelligent routing.",
     problem:
-      "Needed a shared backend for software specification projects with isolated workspaces, RBAC, Jira, and AI capabilities.",
+      "GlueCharm and EasySpecs.ai needed a shared backend for software specification projects — with isolated workspaces, role-based access, Jira integration, and AI capabilities.",
     tech: [
       "FastAPI",
       "PostgreSQL",
@@ -167,35 +190,14 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    title: "ManomPay",
-    category: "Fintech",
-    blurb:
-      "Invoicing, payments, expenses, and cash-flow reporting in one dashboard.",
-    description:
-      "All-in-one fintech platform consolidating invoicing, payment processing, expense tracking, and financial reporting. Businesses create invoices, accept payments via multiple channels, and get real-time cash flow visibility.",
-    problem:
-      "SMEs and freelancers struggled with fragmented financial tools across invoices, payments, and expenses.",
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Prisma",
-      "Paystack",
-    ],
-    image: "/projects/manom.webp",
-    links: [{ label: "Live", href: "https://manomsolutions.com" }],
-    featured: true,
-  },
-  {
     title: "Tales of Logistics",
     category: "Content",
     blurb:
       "Podcast and learning brand site with moderated Postgres content.",
     description:
-      "Public marketing/content site for a logistics podcast and learning brand. Next.js serves episodes, interviews, customs cuts, and blog nuggets from a moderated Postgres store, with Nodemailer for contact and partner forms.",
+      "Next.js marketing/content site for a logistics podcast and learning brand. Serves home, episode catalog, videos/interviews, customs cuts, logistics nuggets, partners, about, and contact. Content is moderated in Postgres (isApproved / isDeleted); pages call Route Handlers through a pg pool, with Nodemailer for mail and Cloudinary for images.",
     problem:
-      "Needed a public site for podcasts, videos, and blog content with moderated visibility — without a separate ops backend.",
+      "Needed a public site to publish podcasts, videos, customs clips, and blog content with moderated visibility and inbound contact/partner forms — without a separate ops backend.",
     tech: [
       "Next.js 15",
       "React 19",
@@ -206,7 +208,7 @@ export const projects: Project[] = [
       "Tailwind CSS",
     ],
     image: "/projects/tales-of-logistics.webp",
-    links: [{ label: "Live", href: "https://talesoflogistics.com" }],
+    links: [{ label: "Visit website", href: "https://talesoflogistics.com" }],
     featured: true,
   },
   {
@@ -215,15 +217,19 @@ export const projects: Project[] = [
     blurb:
       "MCP server ranking funding-rate and open-interest signals across Binance, Bybit, and OKX.",
     description:
-      "MCP server that collects trading data from Binance, Bybit, and OKX, analyzing funding rates and open interest for trading signals. Available on Context Protocol.",
+      "MCP server that collects trading data from Binance, Bybit, and OKX, analyzes funding rates and open interest, ranks bullish/bearish signals by confidence, and explains why a signal is forming — so AI trading agents can query it directly. Available as a grant project on the Context Protocol marketplace.",
     problem:
-      "Traders needed to spot opportunities across exchanges without manually checking each one.",
+      "Crypto traders needed to spot opportunities across exchanges, but manually checking Binance, Bybit, and OKX for funding rates and open interest was slow and error-prone.",
     tech: ["TypeScript", "Node.js", "Redis", "MCP Protocol"],
-    links: [{ label: "Public API", href: "https://ctxprotocol.com" }],
+    links: [{ label: "Visit marketplace", href: "https://ctxprotocol.com" }],
     featured: false,
   },
 ];
 
 export function projectLinks(project: Project): ProjectLink[] {
   return project.links ?? [];
+}
+
+export function isPrimaryProjectLink(link: ProjectLink): boolean {
+  return /visit website|visit marketplace/i.test(link.label);
 }

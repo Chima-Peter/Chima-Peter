@@ -4,7 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { projectLinks, projects, type Project } from "@/data/projects";
+import {
+  isPrimaryProjectLink,
+  projectLinks,
+  projects,
+  type Project,
+} from "@/data/projects";
 
 function ProjectMedia({ project }: { project: Project }) {
   const [ready, setReady] = useState(false);
@@ -33,7 +38,7 @@ function ProjectMedia({ project }: { project: Project }) {
   }
 
   return (
-    <div className="relative aspect-[16/10] overflow-hidden border border-border bg-ink/[0.03] sm:aspect-auto sm:h-full sm:min-h-[14rem]">
+    <div className="relative aspect-[16/10] overflow-hidden border border-border bg-ink/[0.03] sm:aspect-auto sm:h-full sm:min-h-[16rem]">
       {ready ? (
         <Image
           src={project.image}
@@ -53,6 +58,25 @@ function ProjectMedia({ project }: { project: Project }) {
   );
 }
 
+function ExternalIcon() {
+  return (
+    <svg
+      className="h-3.5 w-3.5 shrink-0"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M14 4h6m0 0v6m0-6L10 14"
+      />
+    </svg>
+  );
+}
+
 export default function Projects() {
   const featuredProjects = projects.filter((p) => p.featured);
   const otherProjects = projects.filter((p) => !p.featured);
@@ -69,8 +93,8 @@ export default function Projects() {
         <p className="section-label">Index 01</p>
         <h2 className="section-heading">Selected work</h2>
         <p className="prose-body">
-          Production systems across AI tooling, commerce, and SaaS — ordered by
-          what I&apos;m most focused on right now.
+          Production systems across AI tooling, commerce, and SaaS — each with
+          the problem it solved and where you can open it.
         </p>
       </motion.div>
 
@@ -88,7 +112,7 @@ export default function Projects() {
               transition={{ duration: 0.4, delay: Math.min(index * 0.04, 0.2) }}
               className="group border-b border-border py-8 sm:py-10"
             >
-              <div className="grid gap-6 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:gap-10 lg:gap-14">
+              <div className="grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:gap-10 lg:gap-14">
                 <div className="min-w-0">
                   <div className="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
                     <span className="font-mono text-xs text-muted">{n}</span>
@@ -99,32 +123,47 @@ export default function Projects() {
                     {project.title}
                   </h3>
 
-                  <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted sm:mt-4 sm:text-base">
-                    {project.blurb}
-                  </p>
+                  <div className="mt-5 space-y-4 max-w-2xl text-[15px] leading-relaxed sm:text-base">
+                    <p className="text-ink-soft">
+                      <span className="font-semibold text-ink">Problem. </span>
+                      {project.problem}
+                    </p>
+                    <p className="text-muted">
+                      <span className="font-semibold text-ink">Solution. </span>
+                      {project.description}
+                    </p>
+                  </div>
 
                   {links.length > 0 ? (
-                    <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 sm:mt-5">
-                      {links.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
+                    <div className="mt-6 flex flex-col gap-2 sm:mt-7 sm:flex-row sm:flex-wrap">
+                      {links.map((item) => {
+                        const primary = isPrimaryProjectLink(item);
+                        return (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={
+                              primary
+                                ? "btn-primary w-full sm:w-auto"
+                                : "btn-secondary w-full sm:w-auto"
+                            }
+                          >
+                            {item.label}
+                            <ExternalIcon />
+                          </Link>
+                        );
+                      })}
                     </div>
                   ) : (
-                    <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
-                      Internal API
+                    <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+                      Internal API — no public website or repo
                     </p>
                   )}
 
                   <div className="mt-5 flex flex-wrap gap-1.5 sm:mt-6">
-                    {project.tech.slice(0, 6).map((tech) => (
+                    {project.tech.map((tech) => (
                       <span key={tech} className="tech-chip">
                         {tech}
                       </span>
@@ -146,41 +185,47 @@ export default function Projects() {
           </h3>
           <ul className="border-t border-border">
             {otherProjects.map((project) => {
-              const primary = projectLinks(project)[0];
-              const row = (
-                <div className="flex flex-col gap-2 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
-                  <div className="min-w-0">
-                    <p className="font-display text-lg font-semibold text-ink">
-                      {project.title}
-                    </p>
-                    <p className="mt-1 text-sm text-muted sm:text-base">
-                      {project.blurb}
-                    </p>
-                  </div>
-                  <div className="flex shrink-0 flex-wrap gap-1.5">
-                    {project.tech.slice(0, 3).map((tech) => (
-                      <span key={tech} className="tech-chip">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              );
-
+              const links = projectLinks(project);
               return (
-                <li key={project.title} className="border-b border-border">
-                  {primary ? (
-                    <Link
-                      href={primary.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block transition-colors hover:bg-accent/5"
-                    >
-                      {row}
-                    </Link>
-                  ) : (
-                    row
-                  )}
+                <li key={project.title} className="border-b border-border py-6 sm:py-7">
+                  <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
+                    <div className="min-w-0 max-w-3xl">
+                      <p className="font-display text-lg font-semibold text-ink sm:text-xl">
+                        {project.title}
+                      </p>
+                      <p className="mt-3 text-[15px] leading-relaxed text-ink-soft sm:text-base">
+                        <span className="font-semibold text-ink">Problem. </span>
+                        {project.problem}
+                      </p>
+                      <p className="mt-2 text-[15px] leading-relaxed text-muted sm:text-base">
+                        <span className="font-semibold text-ink">Solution. </span>
+                        {project.description}
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-1.5">
+                        {project.tech.map((tech) => (
+                          <span key={tech} className="tech-chip">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    {links.length > 0 ? (
+                      <div className="flex shrink-0 flex-col gap-2 sm:flex-row lg:flex-col">
+                        {links.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-secondary w-full sm:w-auto"
+                          >
+                            {item.label}
+                            <ExternalIcon />
+                          </Link>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
                 </li>
               );
             })}
@@ -196,6 +241,7 @@ export default function Projects() {
           className="btn-secondary"
         >
           View all on GitHub
+          <ExternalIcon />
         </Link>
       </div>
     </section>

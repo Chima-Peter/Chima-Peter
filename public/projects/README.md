@@ -7,7 +7,7 @@ Drop product UI WebPs here (~1600×1200). The portfolio site loads them from `/p
 | File | Project | Live / repos |
 | --- | --- | --- |
 | `easyspecs.webp` | EasySpecs.ai | [easyspecs.ai](https://easyspecs.ai) |
-| `dukka.webp` | Dukka | [dukka.store](https://www.dukka.store) · [API](https://github.com/Chima-Peter/Dukka) · [store](https://github.com/Chima-Peter/dukka_store) |
+| `dukka.webp` | Dukka | [API](https://github.com/Chima-Peter/Dukka) · [store](https://github.com/Chima-Peter/dukka_store) |
 | `studybuddy.webp` | StudyBuddy | [API](https://github.com/Chima-Peter/study_buddy) · [app](https://github.com/Chima-Peter/study_buddy_app) |
 | `adi-camping.webp` | ADI Camping | [adicamping.com](https://adicamping.com) |
 | `manom.webp` | ManomPay | [manomsolutions.com](https://manomsolutions.com) |
