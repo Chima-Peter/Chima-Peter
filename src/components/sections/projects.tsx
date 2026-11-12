@@ -93,7 +93,7 @@ export default function Projects() {
         <p className="section-label">Index 01</p>
         <h2 className="section-heading">Selected work</h2>
         <p className="prose-body">
-          Production systems across AI tooling, commerce, and SaaS — each with
+          Production systems across AI tooling, commerce, and SaaS - each with
           the problem it solved and where you can open it.
         </p>
       </motion.div>
@@ -113,7 +113,11 @@ export default function Projects() {
               className="group border-b border-border py-8 sm:py-10"
             >
               <div className="grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:gap-10 lg:gap-14">
-                <div className="min-w-0">
+                <div className="order-1 md:order-2">
+                  <ProjectMedia project={project} />
+                </div>
+
+                <div className="order-2 min-w-0 md:order-1">
                   <div className="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
                     <span className="font-mono text-xs text-muted">{n}</span>
                     <span className="tag">{project.category}</span>
@@ -123,7 +127,7 @@ export default function Projects() {
                     {project.title}
                   </h3>
 
-                  <div className="mt-5 space-y-4 max-w-2xl text-[15px] leading-relaxed sm:text-base">
+                  <div className="mt-5 max-w-2xl space-y-4 text-[15px] leading-relaxed sm:text-base">
                     <p className="text-ink-soft">
                       <span className="font-semibold text-ink">Problem. </span>
                       {project.problem}
@@ -158,7 +162,7 @@ export default function Projects() {
                     </div>
                   ) : (
                     <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
-                      Internal API — no public website or repo
+                      Internal API - no public website or repo
                     </p>
                   )}
 
@@ -170,8 +174,6 @@ export default function Projects() {
                     ))}
                   </div>
                 </div>
-
-                <ProjectMedia project={project} />
               </div>
             </motion.li>
           );

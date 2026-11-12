@@ -1,6 +1,6 @@
 # Chima Ojimma
 
-**Backend Engineer** — Building production systems with real-time data pipelines, AI orchestration, and enterprise SaaS.
+**Backend Engineer** - Building production systems with real-time data pipelines, AI orchestration, and enterprise SaaS.
 
 [Portfolio](https://chima-peter.vercel.app/) · [LinkedIn](https://linkedin.com/in/chimaojimma) · [Email](mailto:chimaojimma@gmail.com) · [Resume](https://chima-peter.vercel.app/Chima_Ojimma_Resume.pdf)
 
@@ -31,18 +31,13 @@ I work most at the intersection of reliability and product impact: clear APIs, d
 
 ## Selected Work
 
-### [EasySpecs.ai](https://easyspecs.ai) — [Extension](https://open-vsx.org/extension/easyspecs/easyspecs-ai) — [CLI](https://www.npmjs.com/package/@gluecharm-lab/easyspecs-cli)
+### [EasySpecs.ai](https://easyspecs.ai) - [Extension](https://open-vsx.org/extension/easyspecs/easyspecs-ai) - [CLI](https://www.npmjs.com/package/@gluecharm-lab/easyspecs-cli)
 
 ![EasySpecs.ai](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/easyspecs.webp)
 
-**Problem:** Writing software requirements is tedious and often skipped. When documentation exists, it lives separately from the code and quickly becomes outdated.
+**Problem:** Writing software requirements is tedious and often skipped, and docs that do exist drift away from the codebase.
 
-**Solution:** Co-built EasySpecs.ai end-to-end across three surfaces that share one project cloud:
-- **Web app** — Trust Engineering hub for projects, change requests, streaming SRS chat, bidirectional Jira, org sharing, and i18n
-- **CLI** — headless factory that scans git repos into grounded application context with up to 64 concurrent AI workstations, incremental updates, and CI-friendly output
-- **IDE extension** (VS Code / Cursor / Windsurf) — in-editor browse, sign-in, and cloud sync while heavy work runs via the bundled CLI
-
-Deployed on AWS via Pulumi with GitLab CI/CD; backend powered by FastAPI, Neo4j, PostgreSQL, and Supabase Auth.
+**Solution:** Built a web app, CLI, and IDE extension that keep specs beside the code - with AI help to draft and update them, Jira sync, and cloud sharing across the team.
 
 `Vue 3` `TypeScript` `Vite` `Pinia` `Node.js` `FastAPI` `Neo4j` `PostgreSQL` `Supabase` `Pulumi` `AWS`
 
@@ -52,9 +47,9 @@ Deployed on AWS via Pulumi with GitLab CI/CD; backend powered by FastAPI, Neo4j,
 
 ![ADI Camping](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/adi-camping.webp)
 
-**Problem:** Campground operators managed bookings manually across multiple properties — leading to double bookings, missed payments, and communication gaps with guests.
+**Problem:** Campground operators juggled bookings by hand across properties, which led to double bookings, missed payments, and gaps with guests.
 
-**Solution:** Full-stack multi-tenant camping property management and booking platform covering staff operations and public guest flows: reservations, seasonal availability, check-in/out, billing, rentals, shop, campsite maps, and Spanish tourism compliance. Integrated Stripe payments, Twilio messaging, AI guest-document OCR via Gemini, Vertex AI RAG for staff/guest chat, a WordPress Gutenberg/shortcode embed plugin, and AWS via Pulumi.
+**Solution:** Built one platform for campground staff and guests: bookings, payments, messaging, maps, and compliance - plus a WordPress plugin so marketing sites can take reservations.
 
 `Vue 3` `Tailwind` `Supabase` `Stripe` `Twilio` `Gemini` `Vertex AI` `Pulumi` `WordPress`
 
@@ -64,35 +59,33 @@ Deployed on AWS via Pulumi with GitLab CI/CD; backend powered by FastAPI, Neo4j,
 
 ![ManomPay](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/manom.webp)
 
-**Problem:** SMEs, freelancers, and entrepreneurs struggled with fragmented financial tools — invoices in one app, payments in another, expenses tracked manually — leading to cash-flow blind spots.
+**Problem:** SMEs and freelancers split invoices, payments, and expenses across tools, so cash flow was hard to see.
 
-**Solution:** All-in-one fintech platform consolidating invoicing, payment processing, expense tracking, and financial reporting. Businesses create and send invoices, accept payments via multiple channels (including Paystack), and get real-time cash-flow visibility with automated reminders and local payment integrations.
+**Solution:** Built the NestJS backend for invoices, payments, expenses, and cash-flow - with Paystack and crypto checkout, background jobs, and automatic reminders.
 
-`Next.js` `TypeScript` `Node.js` `PostgreSQL` `Prisma` `Paystack` `Redis`
+`NestJS` `TypeScript` `Prisma` `PostgreSQL` `Redis` `Bull` `Paystack`
 
 ---
 
-### Dukka — [Backend](https://github.com/Chima-Peter/Dukka) · [Storefront](https://github.com/Chima-Peter/dukka_store)
+### Dukka - [Backend](https://github.com/Chima-Peter/Dukka) · [Storefront](https://github.com/Chima-Peter/dukka_store)
 
 ![Dukka](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/dukka.webp)
 
-**Problem:** Selling across African markets needs market-specific catalogs, fixed local-currency pricing, and reliable checkout/fulfillment — not a generic single-market store bolted onto a shared backend.
+**Problem:** Selling across African markets needs local catalogs, currency pricing, and reliable checkout - not a one-size-fits-all store.
 
-**Solution:** Cross-country ecommerce platform spanning:
-- **NestJS API** — multi-market catalog, cart/checkout, orders, Paystack payments, warehouses/shipments, promotions/coupons, dual customer/staff JWT + RBAC, BullMQ workers for mail and order lifecycle
-- **Next.js storefront** — IP market detection, guest + authenticated carts, search, checkout, orders, profile, and reviews
+**Solution:** Built an API and storefront for multi-market shopping: local catalogs and prices, cart and checkout, payments, and order fulfillment for customers and staff.
 
 `NestJS` `Prisma` `PostgreSQL` `BullMQ` `Redis` `Paystack` `Next.js` `RTK Query` `Tailwind` `Framer Motion`
 
 ---
 
-### StudyBuddy — [Backend](https://github.com/Chima-Peter/study_buddy) · [Frontend](https://github.com/Chima-Peter/study_buddy_app)
+### StudyBuddy - [Backend](https://github.com/Chima-Peter/study_buddy) · [Frontend](https://github.com/Chima-Peter/study_buddy_app)
 
 ![StudyBuddy](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/studybuddy.webp)
 
-**Problem:** Students juggle separate tools for notes, tutoring, and quizzes — with no grounding in their own course materials — so study time is fragmented and hard to scale.
+**Problem:** Students bounce between notes, tutoring, and quizzes that aren’t tied to their own course materials.
 
-**Solution:** FastAPI + Next.js study companion that lets students upload materials, ingest them into a hybrid search index, tutor via grounded RAG chat, and auto-generate chapter study cards with MCQ quizzes. Covers JWT + Redis auth, signed Supabase uploads, an async parse→chunk→embed→index pipeline, LangGraph agents over WebSocket, live SSE notifications, and RabbitMQ workers with retries and dead-letter queues.
+**Solution:** Built a study app where students upload their notes, chat with a tutor grounded in those notes, and get study cards and practice quizzes generated for them.
 
 `Python` `FastAPI` `Supabase` `Redis` `RabbitMQ` `Elasticsearch` `LangGraph` `Gemini` `Docker`
 
@@ -100,9 +93,9 @@ Deployed on AWS via Pulumi with GitLab CI/CD; backend powered by FastAPI, Neo4j,
 
 ### System Manager API
 
-**Problem:** GlueCharm and EasySpecs.ai (web, CLI, and IDE extension) needed a shared backend for software specification projects — with isolated workspaces, role-based access, Jira integration, and AI capabilities.
+**Problem:** GlueCharm and EasySpecs needed one backend for teams, workspaces, specs, access control, and AI.
 
-**Solution:** Core FastAPI backend powering GlueCharm and EasySpecs. Manages organizations, workspaces, projects, and specification artifacts with RBAC. Syncs with Jira, links git repositories for code context, and runs background workers for invitations, exports, and AI-powered content generation. Includes a dedicated AI microservice that orchestrates multiple providers (OpenAI, Gemini, Groq, Mistral) with intelligent routing. API-only — no public UI.
+**Solution:** Built the shared backend for GlueCharm and EasySpecs: teams, workspaces, specs, Jira sync, and AI that routes across multiple providers. API-only - no public UI.
 
 `FastAPI` `PostgreSQL` `Neo4j` `Redis` `Celery` `Supabase` `LangChain` `AWS` `Pulumi`
 
@@ -112,19 +105,19 @@ Deployed on AWS via Pulumi with GitLab CI/CD; backend powered by FastAPI, Neo4j,
 
 ![Tales of Logistics](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/tales-of-logistics.webp)
 
-**Problem:** Needed a public site to publish podcasts, videos, customs clips, and blog content with moderated visibility and inbound contact/partner forms — without a separate ops backend.
+**Problem:** Needed a public place to publish podcasts, videos, and articles with basic moderation and contact forms.
 
-**Solution:** Next.js marketing/content site for a logistics podcast and learning brand. Serves home, episode catalog, videos/interviews, customs cuts, logistics nuggets, partners, about, and contact. Content is moderated in Postgres (`isApproved` / `isDeleted`); pages call Route Handlers through a `pg` pool, with Nodemailer for mail and Cloudinary for images.
+**Solution:** Built the public site for the podcast and learning brand - episodes, videos, short reads, and contact forms - with moderated publishing and no separate admin backend.
 
 `Next.js` `React` `TypeScript` `PostgreSQL` `Nodemailer` `Cloudinary` `Tailwind` `Framer Motion`
 
 ---
 
-### Funding vs OI Divergence Screener — [Context Protocol](https://ctxprotocol.com)
+### Funding vs OI Divergence Screener - [Context Protocol](https://ctxprotocol.com)
 
-**Problem:** Crypto traders needed to spot opportunities across exchanges, but manually checking Binance, Bybit, and OKX for funding rates and open interest was slow and error-prone.
+**Problem:** Spotting funding and open-interest setups across exchanges by hand is slow and easy to miss.
 
-**Solution:** MCP server that collects trading data from all three exchanges, analyzes funding rates and open interest, ranks bullish/bearish signals by confidence, and explains why a signal is forming — so AI trading agents can query it directly. Available as a grant project on the Context Protocol marketplace. API-only.
+**Solution:** Built a tool that watches funding and open interest across major exchanges, ranks opportunities, and explains the signal so traders or AI agents can use it. API-only.
 
 `TypeScript` `Node.js` `Redis` `MCP Protocol`
 

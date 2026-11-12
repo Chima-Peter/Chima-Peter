@@ -33,11 +33,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chima-peter.vercel.app/"),
-  title: "Chima Ojimma — Backend Engineer",
+  title: "Chima Ojimma - Backend Engineer",
   description:
     "Backend Engineer with 4+ years building scalable backend systems, distributed services, and AI infrastructure. Specialized in Python, TypeScript, FastAPI, NestJS, and AWS.",
   openGraph: {
-    title: "Chima Ojimma — Backend Engineer",
+    title: "Chima Ojimma - Backend Engineer",
     description:
       "Building distributed systems and AI infrastructure across fintech, SaaS, and developer tooling.",
     url: "https://chima-peter.vercel.app/",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chima Ojimma — Backend Engineer",
+    title: "Chima Ojimma - Backend Engineer",
     description:
       "Building distributed systems and AI infrastructure across fintech, SaaS, and developer tooling.",
     images: ["/chima_ojimma.jpeg"],

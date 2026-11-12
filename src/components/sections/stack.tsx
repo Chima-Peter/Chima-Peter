@@ -55,7 +55,7 @@ export default function Stack() {
         <p className="section-label">Index 03</p>
         <h2 className="section-heading">Stack</h2>
         <p className="prose-body mb-8 sm:mb-10">
-          Tooling chosen for the job — languages, frameworks, data stores, and
+          Tooling chosen for the job - languages, frameworks, data stores, and
           infrastructure used to ship production systems.
         </p>
       </motion.div>

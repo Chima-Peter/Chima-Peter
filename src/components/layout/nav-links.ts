@@ -6,7 +6,7 @@ export const NAV_LINKS = [
   { name: "Contact", href: "#contact", id: "contact" },
 ] as const;
 
-/** Served from /public — also linked from the GitHub profile README */
+/** Served from /public - also linked from the GitHub profile README */
 export const RESUME_HREF = "/Chima_Ojimma_Resume.pdf";
 
 export const RESUME_DOWNLOAD_NAME = "Chima_Ojimma_Resume.pdf";

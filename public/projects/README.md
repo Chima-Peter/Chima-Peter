@@ -17,8 +17,8 @@ Drop product UI WebPs here (~1600×1200). The portfolio site loads them from `/p
 
 | Project | Why |
 | --- | --- |
-| System Manager API | Backend only — no public UI |
-| Funding vs OI Divergence Screener | API only — [ctxprotocol.com](https://ctxprotocol.com) |
+| System Manager API | Backend only - no public UI |
+| Funding vs OI Divergence Screener | API only - [ctxprotocol.com](https://ctxprotocol.com) |
 
 ## Notes
 

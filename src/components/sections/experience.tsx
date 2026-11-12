@@ -17,7 +17,7 @@ const roles: Role[] = [
   {
     company: "easyspecs.ai",
     title: "Backend Engineer",
-    period: "Mar 2026 — Present",
+    period: "Mar 2026 - Present",
     location: "Spain",
     highlights: [
       "Co-built the EasySpecs headless CLI around a Factory → Pipeline → Workstation architecture with six pipelines for synthesis, coverage, remediation, link mapping, upload, and download.",
@@ -42,7 +42,7 @@ const roles: Role[] = [
   {
     company: "Gluecharm",
     title: "Fullstack Developer",
-    period: "Oct 2025 — Mar 2026",
+    period: "Oct 2025 - Mar 2026",
     location: "Spain",
     highlights: [
       "Architected an event-driven, multi-tenant microservices platform for AI-powered content generation using Neo4j and PostgreSQL in a dual-persistence design.",
@@ -73,15 +73,15 @@ const roles: Role[] = [
   {
     company: "Manom",
     title: "Backend & DevOps Engineer",
-    period: "Apr 2023 — Sep 2025",
+    period: "Apr 2023 - Sep 2025",
     location: "Africa",
     highlights: [
-      "Engineered a modular NestJS/TypeScript fintech backend with 246 API endpoints across 31 modules for invoicing, accounting, payroll, subscriptions, CRM, wallets, and analytics.",
-      "Built Redis- and Bull-powered processing for invoice generation, payment provisioning, subscription charging, retries, reminders, and grace periods.",
-      "Integrated Paystack, NOWPayments, and Finecore for fiat and crypto payments, virtual accounts, wallets, transfers, FX, and identity verification.",
-      "Delivered invoice workflows with partial payments, fiat/crypto checkout, PDF generation, cloud storage, scheduled delivery, and overdue notifications.",
-      "Built a Gemini-powered financial assistant using LangChain tool calling across six tools, backed by FastAPI and MongoDB chat history.",
-      "Delivered production infrastructure with SSE notifications, structured logging, readiness checks, Docker Swarm, Nginx, automated TLS, rolling deployments, and rollback protection.",
+      "Engineered a modular NestJS/TypeScript fintech backend with 246 API endpoints across 31 modules, supporting invoicing, accounting, payroll, subscriptions, CRM, wallets, and analytics.",
+      "Built Redis- and Bull-powered background processing for invoice generation, payment provisioning, subscription charging, retries, reminders, and grace-period management.",
+      "Integrated Paystack, NOWPayments, and Finecore APIs for fiat and cryptocurrency payments, virtual accounts, wallets, bank transfers, foreign exchange, and identity verification.",
+      "Developed end-to-end invoice workflows supporting partial payments, fiat/crypto checkout, PDF generation, cloud storage, scheduled delivery, and overdue notifications.",
+      "Built a Gemini-powered financial assistant with LangChain tool calling, routing conversations across six tools for invoice generation, business onboarding, subscriptions, FAQs, and financial-data retrieval, backed by FastAPI and MongoDB chat history.",
+      "Delivered production infrastructure with real-time SSE notifications, structured Winston logging, readiness checks, Docker Swarm, Nginx ingress, Redis, automated TLS, rolling deployments, rollback protection, and GitHub Actions CI/CD on Azure VPS.",
     ],
     tech: [
       "TypeScript",
@@ -91,22 +91,30 @@ const roles: Role[] = [
       "Redis",
       "Bull",
       "Node.js",
-      "Docker Swarm",
-      "GitHub Actions",
+      "Express",
+      "Cloudinary",
+      "Nodemailer",
+      "Puppeteer",
+      "PDFKit",
+      "Handlebars",
+      "OpenAPI/Swagger",
       "FastAPI",
-      "LangGraph",
+      "LangChain",
       "Gemini",
       "MongoDB",
       "Paystack",
       "NOWPayments",
       "Finecore",
+      "Docker Swarm",
       "Nginx",
+      "GitHub Actions",
+      "Azure",
     ],
   },
   {
     company: "Freelance",
     title: "Freelancer",
-    period: "Aug 2022 — Present",
+    period: "Aug 2022 - Present",
     highlights: [
       "Designed and developed responsive, production-ready web applications for clients across education, media, logistics, real estate, and fintech, translating business requirements into functional user experiences.",
       "Built an AI-powered study platform featuring interactive learning workflows and AI-assisted study experiences, alongside a podcast platform with content discovery and media consumption interfaces.",
@@ -146,7 +154,7 @@ export default function Experience() {
         <h2 className="section-heading">Experience</h2>
         <p className="prose-body mb-4">
           Building production systems across fintech, enterprise SaaS, and
-          developer tooling — from early-stage startups to client engagements.
+          developer tooling - from early-stage startups to client engagements.
         </p>
         <Link
           href={RESUME_HREF}
