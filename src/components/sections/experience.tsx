@@ -151,9 +151,9 @@ export default function Experience() {
         <Link
           href={RESUME_HREF}
           download={RESUME_DOWNLOAD_NAME}
-          className="mb-8 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-accent hover:text-accent-hover"
+          className="btn-secondary mb-8"
         >
-          Download resume →
+          Download resume
         </Link>
       </motion.div>
 

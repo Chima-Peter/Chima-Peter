@@ -25,10 +25,8 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8f9f7" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0c0a" },
-  ],
+  themeColor: "#0a0c0a",
+  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
 };
@@ -95,7 +93,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${dmSans.variable} ${ibmPlexMono.variable}`}
+      className={`dark ${syne.variable} ${dmSans.variable} ${ibmPlexMono.variable}`}
       suppressHydrationWarning
     >
       <head>

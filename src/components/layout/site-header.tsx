@@ -3,8 +3,12 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import ThemeToggle from "@/components/theme/theme-toggle";
-import { NAV_LINKS, SOCIAL_LINKS } from "./nav-links";
+import {
+  NAV_LINKS,
+  RESUME_DOWNLOAD_NAME,
+  RESUME_HREF,
+  SOCIAL_LINKS,
+} from "./nav-links";
 import { useScrollSpy } from "./use-scroll-spy";
 
 const sectionIds = NAV_LINKS.map((link) => link.id);
@@ -29,7 +33,7 @@ export default function SiteHeader() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="site-shell flex h-14 items-center justify-between sm:h-16">
+      <div className="site-shell flex h-14 items-center justify-between gap-3 sm:h-16">
         <Link
           href="/"
           className="font-display text-base font-semibold tracking-tight text-ink sm:text-lg"
@@ -53,11 +57,16 @@ export default function SiteHeader() {
               </Link>
             );
           })}
-          <ThemeToggle />
+          <Link
+            href={RESUME_HREF}
+            download={RESUME_DOWNLOAD_NAME}
+            className="inline-flex shrink-0 items-center bg-ink px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-surface transition-colors hover:bg-ink-soft"
+          >
+            Download resume
+          </Link>
         </nav>
 
         <div className="flex items-center gap-1 md:hidden">
-          <ThemeToggle />
           <button
             type="button"
             className="p-2 text-ink-soft hover:text-ink"
@@ -100,22 +109,36 @@ export default function SiteHeader() {
                   </Link>
                 </li>
               ))}
+              <li className="pt-2">
+                <Link
+                  href={RESUME_HREF}
+                  download={RESUME_DOWNLOAD_NAME}
+                  onClick={() => setOpen(false)}
+                  className="inline-flex w-full items-center justify-center bg-ink px-4 py-3 text-xs font-bold uppercase tracking-[0.14em] text-surface"
+                >
+                  Download resume
+                </Link>
+              </li>
             </ul>
             <div className="site-shell flex flex-wrap gap-4 border-t border-border py-4">
-              {SOCIAL_LINKS.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  target={link.href.startsWith("mailto") ? undefined : "_blank"}
-                  rel={
-                    link.href.startsWith("mailto") ? undefined : "noopener noreferrer"
-                  }
-                  onClick={() => setOpen(false)}
-                  className="text-sm text-muted hover:text-accent"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {SOCIAL_LINKS.filter((link) => link.name !== "Resume").map(
+                (link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    target={link.href.startsWith("mailto") ? undefined : "_blank"}
+                    rel={
+                      link.href.startsWith("mailto")
+                        ? undefined
+                        : "noopener noreferrer"
+                    }
+                    onClick={() => setOpen(false)}
+                    className="text-sm text-muted hover:text-accent"
+                  >
+                    {link.name}
+                  </Link>
+                ),
+              )}
             </div>
           </motion.nav>
         )}

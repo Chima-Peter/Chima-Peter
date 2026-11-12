@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+const ease = [0.22, 1, 0.36, 1] as const;
 
 const fade = {
   hidden: { opacity: 0, y: 20 },
@@ -12,51 +14,66 @@ const fade = {
     transition: {
       duration: 0.6,
       delay: 0.08 + i * 0.1,
-      ease: [0.22, 1, 0.36, 1] as const,
+      ease,
     },
   }),
 };
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(sectionRef, { amount: 0.45 });
+
   return (
-    <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden pb-10 pt-20 sm:justify-center sm:pb-16 sm:pt-24 lg:pb-20">
+    <section
+      ref={sectionRef}
+      id="top"
+      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden pb-10 pt-20 sm:justify-center sm:pb-16 sm:pt-24 lg:pb-20"
+    >
       <motion.div
+        key={inView ? "hero-image-in" : "hero-image-out"}
         initial={{ opacity: 0, x: 48 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}
+        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 48 }}
+        transition={{ duration: 1.15, ease }}
         className="pointer-events-none absolute inset-0 -z-10"
         aria-hidden
       >
         <div className="absolute inset-y-0 right-0 w-full overflow-hidden sm:w-[55%]">
           <motion.div
             className="absolute inset-[-6%]"
-            initial={{ scale: 1.12, y: 18 }}
-            animate={{
-              scale: [1.08, 1.14, 1.08],
-              y: [0, -16, 0],
-              x: [0, 10, 0],
-            }}
-            transition={{
-              opacity: { duration: 1.15, ease: [0.22, 1, 0.36, 1] },
-              scale: {
-                duration: 22,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.8,
-              },
-              y: {
-                duration: 22,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.8,
-              },
-              x: {
-                duration: 26,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.8,
-              },
-            }}
+            initial={{ scale: 1.12, y: 18, x: 0 }}
+            animate={
+              inView
+                ? {
+                    scale: [1.08, 1.14, 1.08],
+                    y: [0, -16, 0],
+                    x: [0, 10, 0],
+                  }
+                : { scale: 1.12, y: 18, x: 0 }
+            }
+            transition={
+              inView
+                ? {
+                    scale: {
+                      duration: 22,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5,
+                    },
+                    y: {
+                      duration: 22,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5,
+                    },
+                    x: {
+                      duration: 26,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5,
+                    },
+                  }
+                : { duration: 0.4 }
+            }
           >
             <Image
               src="/chima_ojimma.jpeg"
@@ -73,30 +90,33 @@ export default function Hero() {
 
       <div className="site-shell relative w-full">
         <motion.p
+          key={inView ? "badge-in" : "badge-out"}
           custom={0}
           variants={fade}
           initial="hidden"
-          animate="show"
+          animate={inView ? "show" : "hidden"}
           className="mb-4 font-mono text-[11px] uppercase tracking-[0.22em] text-accent sm:mb-6"
         >
           Available for work · Remote
         </motion.p>
 
         <motion.h1
+          key={inView ? "title-in" : "title-out"}
           custom={1}
           variants={fade}
           initial="hidden"
-          animate="show"
+          animate={inView ? "show" : "hidden"}
           className="max-w-[10ch] font-display text-[clamp(2.75rem,12vw,7.5rem)] font-bold leading-[0.92] tracking-tight text-ink"
         >
           Chima Ojimma
         </motion.h1>
 
         <motion.p
+          key={inView ? "copy-in" : "copy-out"}
           custom={2}
           variants={fade}
           initial="hidden"
-          animate="show"
+          animate={inView ? "show" : "hidden"}
           className="mt-5 max-w-md text-base leading-relaxed text-muted sm:mt-6 sm:text-lg"
         >
           Backend engineer building distributed systems and AI infrastructure
@@ -104,10 +124,11 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
+          key={inView ? "cta-in" : "cta-out"}
           custom={3}
           variants={fade}
           initial="hidden"
-          animate="show"
+          animate={inView ? "show" : "hidden"}
           className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:items-center"
         >
           <Link href="#projects" className="btn-primary w-full sm:w-auto">
