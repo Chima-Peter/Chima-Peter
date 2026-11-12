@@ -6,7 +6,7 @@
 | `dukka.webp` | Dukka (API + market) | added |
 | `adi-camping.webp` | ADI Camping | added |
 | `manom.webp` | ManomPay | added |
-| `studybuddy.webp` | StudyBuddy | needed |
+| `studybuddy.webp` | StudyBuddy | added |
 | `tales-of-logistics.webp` | Tales of Logistics | added |
 
 **No screenshot**

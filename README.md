@@ -53,9 +53,7 @@ Cross-country ecommerce for African markets: market-specific catalogs, local-cur
 
 ### StudyBuddy
 
-<!-- Drop `public/projects/studybuddy.webp` then uncomment:
 ![StudyBuddy](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/studybuddy.webp)
--->
 
 Study companion that ingests course materials into hybrid search, tutors via grounded RAG, and auto-generates chapter cards with MCQs.
 
