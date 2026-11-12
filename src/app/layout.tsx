@@ -1,32 +1,33 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Source_Sans_3, JetBrains_Mono } from "next/font/google";
+import { Syne, DM_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import {
   ThemeProvider,
   themeInitScript,
 } from "@/components/theme/theme-provider";
-import CursorGlow from "@/components/layout/cursor-glow";
 
-const fraunces = Fraunces({
+const syne = Syne({
   variable: "--font-display",
   subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
 });
 
-const sourceSans = Source_Sans_3({
+const dmSans = DM_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#eef1f4" },
-    { media: "(prefers-color-scheme: dark)", color: "#0c0f12" },
+    { media: "(prefers-color-scheme: light)", color: "#f8f9f7" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0c0a" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -34,21 +35,21 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chima-peter.vercel.app/"),
-  title: "Chima Peter Ojimma — Backend Engineer",
+  title: "Chima Ojimma — Backend Engineer",
   description:
     "Backend Engineer with 4+ years building scalable backend systems, distributed services, and AI infrastructure. Specialized in Python, TypeScript, FastAPI, NestJS, and AWS.",
   openGraph: {
-    title: "Chima Peter Ojimma — Backend Engineer",
+    title: "Chima Ojimma — Backend Engineer",
     description:
       "Building distributed systems and AI infrastructure across fintech, SaaS, and developer tooling.",
     url: "https://chima-peter.vercel.app/",
-    siteName: "Chima Peter Ojimma",
+    siteName: "Chima Ojimma",
     images: [
       {
         url: "/chima_ojimma.jpeg",
         width: 1200,
         height: 630,
-        alt: "Chima Peter Ojimma - Backend Engineer",
+        alt: "Chima Ojimma - Backend Engineer",
       },
     ],
     locale: "en_US",
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chima Peter Ojimma — Backend Engineer",
+    title: "Chima Ojimma — Backend Engineer",
     description:
       "Building distributed systems and AI infrastructure across fintech, SaaS, and developer tooling.",
     images: ["/chima_ojimma.jpeg"],
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   keywords: [
-    "Chima Peter Ojimma",
+    "Chima Ojimma",
     "Backend Engineer",
     "Distributed Systems",
     "AI Infrastructure",
@@ -94,7 +95,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${sourceSans.variable} ${jetbrainsMono.variable}`}
+      className={`${syne.variable} ${dmSans.variable} ${ibmPlexMono.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -103,7 +104,6 @@ export default function RootLayout({
       <body className="font-sans antialiased" suppressHydrationWarning>
         <ThemeProvider>
           <div className="noise" aria-hidden />
-          <CursorGlow />
           <div className="relative z-10">{children}</div>
         </ThemeProvider>
         <Analytics />

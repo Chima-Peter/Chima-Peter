@@ -11,7 +11,9 @@ export default function Contact() {
     email: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
+    "idle",
+  );
   const [snackbar, setSnackbar] = useState({
     isOpen: false,
     message: "",
@@ -46,7 +48,8 @@ export default function Contact() {
       setStatus("error");
       setSnackbar({
         isOpen: true,
-        message: error instanceof Error ? error.message : "Failed to send message",
+        message:
+          error instanceof Error ? error.message : "Failed to send message",
         type: "error",
       });
     }
@@ -55,25 +58,28 @@ export default function Contact() {
   const closeSnackbar = () => setSnackbar({ ...snackbar, isOpen: false });
 
   return (
-    <section id="contact" className="scroll-mt-24 pb-8 lg:scroll-mt-28">
+    <section id="contact" className="scroll-mt-20 pb-8 sm:scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.45 }}
       >
-        <p className="section-label">Get in Touch</p>
-        <h2 className="section-heading">Let&apos;s build something together</h2>
-        <p className="prose-body mb-8 max-w-prose">
-          Open to full-time roles, contract work, and interesting collaborations.
-          If you have a project that needs solid engineering, I&apos;d love to
-          hear about it.
+        <p className="section-label">Index 04</p>
+        <h2 className="section-heading">Contact</h2>
+        <p className="prose-body mb-8 max-w-xl">
+          Open to full-time roles, contract work, and collaborations. If you
+          have a project that needs solid engineering, I&apos;d love to hear
+          about it.
         </p>
 
-        <form onSubmit={handleSubmit} className="mb-10 space-y-5">
+        <form onSubmit={handleSubmit} className="mb-10 max-w-xl space-y-5">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label htmlFor="name" className="mb-2 block text-base font-medium text-ink">
+              <label
+                htmlFor="name"
+                className="mb-2 block font-mono text-[11px] uppercase tracking-[0.14em] text-muted"
+              >
                 Name
               </label>
               <input
@@ -81,13 +87,18 @@ export default function Contact() {
                 id="name"
                 required
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 className="form-input"
                 placeholder="Your name"
               />
             </div>
             <div>
-              <label htmlFor="email" className="mb-2 block text-base font-medium text-ink">
+              <label
+                htmlFor="email"
+                className="mb-2 block font-mono text-[11px] uppercase tracking-[0.14em] text-muted"
+              >
                 Email
               </label>
               <input
@@ -95,14 +106,19 @@ export default function Contact() {
                 id="email"
                 required
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 className="form-input"
                 placeholder="you@example.com"
               />
             </div>
           </div>
           <div>
-            <label htmlFor="message" className="mb-2 block text-base font-medium text-ink">
+            <label
+              htmlFor="message"
+              className="mb-2 block font-mono text-[11px] uppercase tracking-[0.14em] text-muted"
+            >
               Message
             </label>
             <textarea
@@ -110,7 +126,9 @@ export default function Contact() {
               required
               rows={5}
               value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
               className="form-input resize-none"
               placeholder="Tell me about your project..."
             />
@@ -119,37 +137,50 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="btn-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
           >
             {status === "loading" ? "Sending..." : "Send message"}
           </button>
         </form>
 
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Link href="mailto:chimaojimma@gmail.com" className="btn-secondary">
+        <div className="flex flex-col gap-3 border-t border-border pt-8 sm:flex-row sm:gap-8">
+          <Link
+            href="mailto:chimaojimma@gmail.com"
+            className="font-mono text-sm text-ink underline decoration-border underline-offset-4 hover:text-accent hover:decoration-accent"
+          >
             chimaojimma@gmail.com
           </Link>
           <Link
             href="https://linkedin.com/in/chimaojimma"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-secondary"
+            className="font-mono text-sm text-ink underline decoration-border underline-offset-4 hover:text-accent hover:decoration-accent"
           >
             LinkedIn
           </Link>
+          <Link
+            href="https://github.com/chima-peter"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-sm text-ink underline decoration-border underline-offset-4 hover:text-accent hover:decoration-accent"
+          >
+            GitHub
+          </Link>
         </div>
 
-        <dl className="mt-10 grid gap-4 border-t border-border pt-8 sm:grid-cols-3">
+        <dl className="mt-10 grid gap-4 sm:grid-cols-3">
           {[
             { label: "Location", value: "Remote Worldwide" },
             { label: "Availability", value: "Flexible hours" },
             { label: "Response", value: "Within 24 hours" },
           ].map((item) => (
             <div key={item.label}>
-              <dt className="font-mono text-sm uppercase tracking-[0.14em] text-muted">
+              <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
                 {item.label}
               </dt>
-              <dd className="mt-1 text-base font-medium text-ink">{item.value}</dd>
+              <dd className="mt-1 text-sm font-medium text-ink sm:text-base">
+                {item.value}
+              </dd>
             </div>
           ))}
         </dl>

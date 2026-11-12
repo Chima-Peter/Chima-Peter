@@ -134,16 +134,17 @@ const roles: Role[] = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="scroll-mt-24 pb-20 lg:scroll-mt-28 lg:pb-28">
+    <section id="experience" className="scroll-mt-20 pb-16 sm:scroll-mt-24 sm:pb-24">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.45 }}
+        className="max-w-2xl"
       >
-        <p className="section-label">Experience</p>
-        <h2 className="section-heading">Where I&apos;ve worked</h2>
-        <p className="prose-body mb-4 max-w-prose">
+        <p className="section-label">Index 02</p>
+        <h2 className="section-heading">Experience</h2>
+        <p className="prose-body mb-4">
           Building production systems across fintech, enterprise SaaS, and
           developer tooling — from early-stage startups to client engagements.
         </p>
@@ -151,52 +152,49 @@ export default function Experience() {
           href={RESUME_HREF}
           target="_blank"
           rel="noopener noreferrer"
-          className="mb-10 inline-flex items-center gap-2 text-base font-medium text-accent hover:text-accent-hover"
+          className="mb-8 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-accent hover:text-accent-hover"
         >
-          Download resume
-          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 4h6m0 0v6m0-6L10 14M4 14v6h6" />
-          </svg>
+          Download resume →
         </Link>
       </motion.div>
 
-      <ol className="space-y-2">
+      <ol className="border-t border-border">
         {roles.map((role, index) => (
           <motion.li
             key={`${role.company}-${role.title}`}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.4, delay: index * 0.05 }}
-            className="list-row group"
+            transition={{ duration: 0.4, delay: Math.min(index * 0.04, 0.16) }}
+            className="border-b border-border py-7 sm:py-9"
           >
-            <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+            <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
               <div>
-                <h3 className="text-lg font-semibold text-ink transition-colors group-hover:text-accent sm:text-xl">
+                <h3 className="font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
                   {role.title}
                   <span className="font-normal text-ink-soft"> · {role.company}</span>
                 </h3>
                 {role.location ? (
-                  <p className="text-base text-muted">{role.location}</p>
+                  <p className="mt-1 text-sm text-muted">{role.location}</p>
                 ) : null}
               </div>
-              <span className="shrink-0 font-mono text-sm text-muted">
+              <span className="shrink-0 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
                 {role.period}
               </span>
             </div>
 
-            <ul className="mb-4 space-y-2">
+            <ul className="mb-4 space-y-2.5">
               {role.highlights.map((highlight) => (
                 <li
                   key={highlight.slice(0, 48)}
-                  className="relative pl-4 text-base leading-relaxed text-ink-soft before:absolute before:left-0 before:top-[0.55em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-border"
+                  className="relative pl-4 text-[15px] leading-relaxed text-ink-soft before:absolute before:left-0 before:top-[0.65em] before:h-1 before:w-1 before:bg-accent sm:text-base"
                 >
                   {highlight}
                 </li>
               ))}
             </ul>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {role.tech.map((t) => (
                 <span key={t} className="tech-chip">
                   {t}

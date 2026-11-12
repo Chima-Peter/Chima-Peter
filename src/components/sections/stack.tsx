@@ -44,35 +44,36 @@ const stack: StackCategory[] = [
 
 export default function Stack() {
   return (
-    <section id="stack" className="scroll-mt-24 pb-20 lg:scroll-mt-28 lg:pb-28">
+    <section id="stack" className="scroll-mt-20 pb-16 sm:scroll-mt-24 sm:pb-24">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.45 }}
+        className="max-w-2xl"
       >
-        <p className="section-label">Tech Stack</p>
-        <h2 className="section-heading">Technologies I work with</h2>
-        <p className="prose-body mb-10 max-w-prose">
-          Modern tooling chosen for the job—languages, frameworks, data stores,
-          and infrastructure used to ship production systems.
+        <p className="section-label">Index 03</p>
+        <h2 className="section-heading">Stack</h2>
+        <p className="prose-body mb-8 sm:mb-10">
+          Tooling chosen for the job — languages, frameworks, data stores, and
+          infrastructure used to ship production systems.
         </p>
       </motion.div>
 
-      <dl className="space-y-6">
+      <dl className="border-t border-border">
         {stack.map((category, index) => (
           <motion.div
             key={category.name}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.35, delay: index * 0.03 }}
-            className="grid gap-2 sm:grid-cols-[8.5rem_1fr] sm:gap-6"
+            transition={{ duration: 0.35, delay: Math.min(index * 0.03, 0.2) }}
+            className="grid gap-3 border-b border-border py-5 sm:grid-cols-[9rem_1fr] sm:gap-8 sm:py-6"
           >
-            <dt className="pt-1 font-mono text-sm uppercase tracking-[0.14em] text-accent">
+            <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent">
               {category.name}
             </dt>
-            <dd className="flex flex-wrap gap-2">
+            <dd className="flex flex-wrap gap-1.5">
               {category.items.map((tech) => (
                 <span key={tech} className="tech-chip">
                   {tech}

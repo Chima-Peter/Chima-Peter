@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import ThemeToggle from "@/components/theme/theme-toggle";
 import { NAV_LINKS, SOCIAL_LINKS } from "./nav-links";
@@ -9,17 +9,54 @@ import { useScrollSpy } from "./use-scroll-spy";
 
 const sectionIds = NAV_LINKS.map((link) => link.id);
 
-export default function MobileNav() {
+export default function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const activeId = useScrollSpy(sectionIds, 80);
+  const [scrolled, setScrolled] = useState(false);
+  const activeId = useScrollSpy(sectionIds, 100);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md lg:hidden">
-      <div className="flex h-14 items-center justify-between px-5">
-        <Link href="/" className="font-display text-xl font-semibold text-ink">
-          Chima<span className="text-accent">.</span>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        scrolled || open
+          ? "border-b border-border bg-background/90 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
+      <div className="site-shell flex h-14 items-center justify-between sm:h-16">
+        <Link
+          href="/"
+          className="font-display text-base font-semibold tracking-tight text-ink sm:text-lg"
+        >
+          CP
+          <span className="text-accent">.</span>
         </Link>
-        <div className="flex items-center gap-1">
+
+        <nav aria-label="Primary" className="hidden items-center gap-6 md:flex">
+          {NAV_LINKS.map((link) => {
+            const isActive = activeId === link.id;
+            return (
+              <Link
+                key={link.id}
+                href={link.href}
+                className={`font-mono text-[11px] uppercase tracking-[0.18em] transition-colors ${
+                  isActive ? "text-accent" : "text-muted hover:text-ink"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+          <ThemeToggle />
+        </nav>
+
+        <div className="flex items-center gap-1 md:hidden">
           <ThemeToggle />
           <button
             type="button"
@@ -46,16 +83,16 @@ export default function MobileNav() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="overflow-hidden border-t border-border bg-background"
+            className="overflow-hidden border-t border-border bg-background md:hidden"
             aria-label="Mobile"
           >
-            <ul className="space-y-1 px-5 py-4">
+            <ul className="site-shell space-y-1 py-4">
               {NAV_LINKS.map((link) => (
                 <li key={link.id}>
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className={`block py-2.5 font-mono text-sm uppercase tracking-[0.16em] ${
+                    className={`block py-3 font-mono text-xs uppercase tracking-[0.18em] ${
                       activeId === link.id ? "text-accent" : "text-ink-soft"
                     }`}
                   >
@@ -64,19 +101,17 @@ export default function MobileNav() {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-wrap gap-4 border-t border-border px-5 py-4">
+            <div className="site-shell flex flex-wrap gap-4 border-t border-border py-4">
               {SOCIAL_LINKS.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   target={link.href.startsWith("mailto") ? undefined : "_blank"}
                   rel={
-                    link.href.startsWith("mailto")
-                      ? undefined
-                      : "noopener noreferrer"
+                    link.href.startsWith("mailto") ? undefined : "noopener noreferrer"
                   }
                   onClick={() => setOpen(false)}
-                  className="text-base text-muted hover:text-accent"
+                  className="text-sm text-muted hover:text-accent"
                 >
                   {link.name}
                 </Link>

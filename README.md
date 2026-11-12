@@ -1,136 +1,124 @@
-# Chima Peter Ojimma
+# Chima Ojimma
 
-**Software Engineer** — Building production systems with real-time data pipelines, AI orchestration, and enterprise SaaS.
+**Backend Engineer** — distributed systems, AI orchestration, and production SaaS.
 
-[Portfolio](https://chima-peter.vercel.app/) · [LinkedIn](https://linkedin.com/in/chimaojimma) · [chimaojimma@gmail.com](mailto:chimaojimma@gmail.com)
+[Portfolio](https://chima-peter.vercel.app/) · [LinkedIn](https://linkedin.com/in/chimaojimma) · [Email](mailto:chimaojimma@gmail.com) · [Resume](https://drive.google.com/file/d/1aqihYJLTIkguUiNOfhTBflgzY6HDMTIc/view?usp=sharing)
 
 ---
 
-## Tech Stack
+## Now
+
+I build backend systems that ship: clear APIs, durable pipelines, and infrastructure you can operate without guesswork. Recent work spans developer tooling (EasySpecs), multi-market commerce (Dukka), and AI study workflows (StudyBuddy).
+
+---
+
+## Stack
 
 | | |
 |---|---|
 | **Languages** | TypeScript · Python · JavaScript |
-| **Frontend** | React · Next.js · Vue 3 · Tailwind CSS · Framer Motion · Radix UI |
-| **Backend** | FastAPI · NestJS · Node.js · Django · Express |
-| **AI/ML** | LangChain · OpenAI · Gemini · Groq · Mistral |
-| **Databases** | PostgreSQL · Redis · Supabase · Neo4j · Prisma |
-| **Infrastructure** | Docker · AWS · Celery · Pulumi · Sentry · Vercel |
-| **Testing** | Jest · Playwright · Vitest |
-| **Other** | Puppeteer · Stripe · Twilio · Cloudinary · Telegram API |
+| **Frontend** | React · Next.js · Vue 3 · Tailwind · Framer Motion |
+| **Backend** | FastAPI · NestJS · Node.js · Express |
+| **AI / ML** | LangChain · LangGraph · Gemini · OpenAI |
+| **Data** | PostgreSQL · Redis · Neo4j · Prisma · Elasticsearch |
+| **Infra** | Docker · AWS · Pulumi · Celery · BullMQ · Vercel |
 
 ---
 
-## Featured Projects
+## Selected work
 
-<details open>
-<summary><b>Enterprise SaaS & Backend</b></summary>
+### EasySpecs.ai
 
-<br>
+![EasySpecs.ai](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/easyspecs.webp)
 
-### [ManomPay](https://manomsolutions.com)
+Web + CLI + IDE extension that keep software requirements next to the code — streaming SRS workspaces, up to 64 concurrent AI workstations, and cloud sync for VS Code / Cursor / Windsurf.
 
-**Problem:** Small to medium-sized businesses, freelancers, and entrepreneurs struggled with fragmented financial tools—managing invoices in one app, payments in another, and tracking expenses manually. This led to cash flow blind spots and wasted time on administrative tasks.
+[Web](https://easyspecs.ai) · [Extension](https://open-vsx.org/extension/easyspecs/easyspecs-ai) · [CLI](https://www.npmjs.com/package/@gluecharm-lab/easyspecs-cli)
 
-**Solution:** Built an all-in-one fintech platform that consolidates invoicing, payment processing, expense tracking, and financial reporting into a single dashboard. Businesses create and send professional invoices, accept payments via multiple channels, and get real-time visibility into cash flow. The system generates financial reports, sends payment reminders automatically, and integrates with local payment providers.
-
-`Next.js` `TypeScript` `Node.js` `PostgreSQL` `Prisma` `Paystack` `Redis`
+`Vue 3` `TypeScript` `FastAPI` `Neo4j` `PostgreSQL` `Pulumi` `AWS`
 
 ---
 
-### System Manager API — [GlueCharm](https://gluecharm.com/) · [EasySpecs.ai](https://easyspecs.ai/)
+### Dukka
 
-**Problem:** GlueCharm and EasySpecs.ai (web app, CLI, and IDE extension) needed a shared backend to manage software specification projects. Teams define features, use cases, user stories, and system diagrams—and need isolated workspaces, role-based access, and integration with tools like Jira.
+![Dukka](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/dukka.webp)
 
-**Solution:** Built the core backend powering GlueCharm, the EasySpecs.ai web application, CLI, and IDE extension. It manages organizations, workspaces, projects, and specification artifacts. Team members are invited with specific roles (owner, admin, member). The system syncs with Jira so user stories push directly to sprint boards, links to Git repositories for code context, and background workers handle invitations, exports, and AI-powered content generation. Includes a dedicated **AI microservice** that orchestrates multiple providers (OpenAI, Gemini, Groq, Mistral) with intelligent routing.
+Cross-country ecommerce for African markets: market-specific catalogs, local-currency pricing, Paystack payments, and fulfillment — NestJS API plus Next.js storefront.
 
-`FastAPI` `PostgreSQL` `Neo4j` `Redis` `Celery` `Supabase` `Sentry` `Pulumi` `AWS` `LangChain`
+[Live](https://www.dukka.store) · [Backend](https://github.com/Chima-Peter/Dukka) · [Storefront](https://github.com/Chima-Peter/dukka_store)
 
----
-
-
-### [Camping Manager](https://webstaging.adicamping.com/en)
-
-**Problem:** Campground operators managed bookings manually across multiple properties—leading to double bookings, missed payments, and communication gaps with guests.
-
-**Solution:** Camping Manager keeps campsite operations and guest booking on one backend. Two surfaces share that system: the **Reservations Manager** is the central ops product for staff and guests—reservations, availability, pricing, check-in/out, billing, maps, compliance, and config, with public search/book/pay/pre-check-in flows and multi-tenant camping locations; the **WordPress plugin** bridges campground marketing sites so they can offer online booking without rebuilding the booking UI (shortcodes/blocks connecting to the manager’s public APIs). Staff configure inventory, seasons, pricing, and policies in the manager → public booking/payment APIs and Vue routes serve guests → the WP plugin embeds those guest flows on sites like ADI Camping.
-
-`Vue 3` `Vite` `TypeScript` `Pinia` `Tailwind` `TipTap` `Stripe` `Supabase` `Vitest` `Playwright` `PHP` `WordPress`
+`NestJS` `Prisma` `PostgreSQL` `BullMQ` `Paystack` `Next.js` `RTK Query`
 
 ---
 
-### [Tales of Logistics](https://talesoflogistics.com/)
+### StudyBuddy
 
-**Problem:** Needed a public site to publish podcasts, videos, customs clips, and blog content with moderated visibility and inbound contact/partner forms—without a separate ops backend.
+<!-- Drop `public/projects/studybuddy.webp` then uncomment:
+![StudyBuddy](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/studybuddy.webp)
+-->
 
-**Solution:** Tales of Logistics is a public marketing/content site for a logistics podcast and learning brand. One Next.js 15 App Router app serves readers: home, episode catalog (`/podcasts`), videos/interviews (`/videos`), customs-focused cuts (`/customs-cut`), blog nuggets (`/logistics-nuggets`), partners, about, and contact. Content is moderated in Postgres via `isApproved` / `isDeleted`; the site only reads approved rows. Pages call Route Handlers under `/api/*` (podcasts, videos, customs-cut, posts, send-email) through a `pg` Pool, with Nodemailer for contact/partner/newsletter mail and Cloudinary for remote images.
+Study companion that ingests course materials into hybrid search, tutors via grounded RAG, and auto-generates chapter cards with MCQs.
 
-`Next.js 15` `React 19` `TypeScript` `PostgreSQL` `pg` `Nodemailer` `Cloudinary` `Tailwind CSS` `Framer Motion` `Vercel Analytics`
+[Backend](https://github.com/Chima-Peter/study_buddy) · [Frontend](https://github.com/Chima-Peter/study_buddy_app)
 
----
-
-### Edumag API
-
-**Problem:** Secondary schools needed a full school management system to manage staff accounts, track qualifications, and handle administrative data—with different access levels for admins and regular staff.
-
-**Solution:** Built a NestJS API with three permission levels (Super Admin, Admin, Staff). Each role has specific access to manage users, view records, or update institutional data. The API includes rate limiting to prevent abuse, security headers for protection, and full test coverage to ensure reliability.
-
-`NestJS` `TypeScript` `Prisma` `PostgreSQL` `Jest` `Helmet`
-
-</details>
-
-<details>
-<summary><b>AI & Intelligent Systems</b></summary>
-
-<br>
-
-### [EasySpecs.ai](https://easyspecs.ai/) — [Extension](https://open-vsx.org/extension/easyspecs/easyspecs-ai) — [CLI](https://www.npmjs.com/package/@gluecharm-lab/easyspecs-cli)
-
-**Problem:** Writing software requirements documents is tedious and often skipped. Teams end up without clear specs, and when documentation does exist, it quickly becomes outdated because it lives separately from the code.
-
-**Solution:** EasySpecs.ai keeps software requirements next to the code so docs don’t drift. Three surfaces share one project cloud: the **web app** is the hub for Trust Engineering—projects, change requests, and SRS docs (preview/edit, AI chat, auto-generate)—plus org settings, credits, Git, and Jira; the **CLI** (`easyspecs-cli`) is a headless factory that turns a repo into structured `.easyspecs/context` (`analysis`, `update context`, `context drift`) with CI-friendly `--json` / `--ci` and agent harnesses (OpenCode, Claude Code, Gemini CLI, Cursor CLI, Codex); the **extension** (VS Code / Cursor / Windsurf) browses change requests and docs in the sidebar, shows affected code, and push/pulls with the web project while heavy work runs via the bundled CLI.
-
-`Vue 3` `TypeScript` `Vite` `Node.js` `VS Code API` `esbuild` `Ajv` `Tailwind CSS` `Pinia` `TipTap`
+`FastAPI` `Elasticsearch` `LangGraph` `Gemini` `Redis` `RabbitMQ` `Supabase`
 
 ---
 
-### Funding vs OI Divergence Screener — [Context Protocol](https://ctxprotocol.com)
+### ADI Camping
 
-**Problem:** Crypto traders needed a way to spot market opportunities across multiple exchanges, but manually checking Binance, Bybit, and OKX was time-consuming and error-prone.
+![ADI Camping](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/adi-camping.webp)
 
-**Solution:** Built a tool that automatically collects trading data from all three exchanges, analyzes funding rates and open interest, and identifies bullish or bearish signals. It ranks opportunities by confidence and explains in plain English why a signal is forming. Designed as an MCP server so AI trading agents can query it directly. Available as a grant project on the Context Protocol marketplace.
+Multi-tenant camping PMS and guest booking — reservations, Stripe, compliance, and a WordPress embed for campground marketing sites.
 
-`TypeScript` `Node.js` `Redis` `MCP Protocol` `REST APIs`
+[Live](https://adicamping.com)
 
----
-
-</details>
-
-<details>
-<summary><b>Financial & Trading Systems</b></summary>
-
-<br>
-
-### Solana Insider Tracker
-
-**Problem:** New tokens launch on Solana constantly, and some are pump-and-dump schemes where insiders buy early and sell to retail traders. Spotting these patterns manually is nearly impossible at blockchain speed.
-
-**Solution:** Built a real-time monitoring tool that watches Solana transactions as they happen. It identifies suspicious patterns: brand new wallets, accounts funded from exchanges and trading within minutes, and groups of wallets buying the same token together. Each alert includes a confidence score, and high-priority alerts get sent to Telegram instantly.
-
-`Python` `asyncio` `Solana RPC` `Telegram API`
+`Vue 3` `Supabase` `Stripe` `Twilio` `Gemini` `Pulumi`
 
 ---
 
-### FX Sentiment Dashboard
+### System Manager API
 
-**Problem:** Forex traders wanted to see how other retail traders were positioned (long vs short) across currency pairs, but this data was scattered and hard to track over time.
+Shared backend for GlueCharm and EasySpecs — orgs, workspaces, specs, Jira sync, and multi-provider AI orchestration. API-only (no public UI).
 
-**Solution:** Built a dashboard that automatically collects sentiment data, stores historical snapshots, and shows how positioning has changed over time (hourly, daily, weekly). It calculates which currencies are strongest or weakest based on aggregate positioning and highlights extreme readings where most traders are on one side of a trade.
-
-`Express` `Node.js` `PostgreSQL` `Puppeteer` `React` `node-cron`
-
-</details>
+`FastAPI` `PostgreSQL` `Neo4j` `Redis` `Celery` `LangChain` `AWS`
 
 ---
 
-[GitHub](https://github.com/chima-peter) · [Portfolio](https://chima-peter.vercel.app/) · [LinkedIn](https://linkedin.com/in/chimaojimma)
+### ManomPay
+
+![ManomPay](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/manom.webp)
+
+Fintech dashboard for invoicing, payments, expenses, and cash-flow reporting.
+
+[Live](https://manomsolutions.com)
+
+`Next.js` `TypeScript` `PostgreSQL` `Prisma` `Paystack`
+
+---
+
+### Tales of Logistics
+
+![Tales of Logistics](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/tales-of-logistics.webp)
+
+Podcast and learning brand site with moderated Postgres content and inbound contact flows.
+
+[Live](https://talesoflogistics.com)
+
+`Next.js` `PostgreSQL` `Nodemailer` `Cloudinary` `Tailwind`
+
+---
+
+### Funding vs OI Divergence Screener
+
+MCP server that ranks funding-rate and open-interest signals across Binance, Bybit, and OKX. API-only.
+
+[Public API](https://ctxprotocol.com)
+
+`TypeScript` `Node.js` `Redis` `MCP`
+
+---
+
+## Elsewhere
+
+[GitHub](https://github.com/chima-peter) · [Portfolio](https://chima-peter.vercel.app/) · [LinkedIn](https://linkedin.com/in/chimaojimma) · [chimaojimma@gmail.com](mailto:chimaojimma@gmail.com)
