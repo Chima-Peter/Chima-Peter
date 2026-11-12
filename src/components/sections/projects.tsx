@@ -110,7 +110,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: Math.min(index * 0.04, 0.2) }}
-              className="group border-b border-border py-8 sm:py-10"
+              className="group border-b border-border py-14 sm:py-20"
             >
               <div className="grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:gap-10 lg:gap-14">
                 <div className="order-1 md:order-2">
@@ -189,7 +189,7 @@ export default function Projects() {
             {otherProjects.map((project) => {
               const links = projectLinks(project);
               return (
-                <li key={project.title} className="border-b border-border py-6 sm:py-7">
+                <li key={project.title} className="border-b border-border py-10 sm:py-12">
                   <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
                     <div className="min-w-0 max-w-3xl">
                       <p className="font-display text-lg font-semibold text-ink sm:text-xl">
