@@ -21,21 +21,52 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden pb-10 pt-20 sm:justify-center sm:pb-16 sm:pt-24 lg:pb-20">
       <motion.div
-        initial={{ opacity: 0, scale: 1.06 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ opacity: 0, x: 48 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}
         className="pointer-events-none absolute inset-0 -z-10"
         aria-hidden
       >
-        <div className="absolute inset-y-0 right-0 w-full sm:w-[55%]">
-          <Image
-            src="/chima_ojimma.jpeg"
-            alt=""
-            fill
-            priority
-            sizes="(max-width: 640px) 100vw, 55vw"
-            className="object-cover object-top opacity-[0.18] grayscale sm:opacity-30 dark:opacity-[0.22] dark:sm:opacity-25"
-          />
+        <div className="absolute inset-y-0 right-0 w-full overflow-hidden sm:w-[55%]">
+          <motion.div
+            className="absolute inset-[-6%]"
+            initial={{ scale: 1.12, y: 18 }}
+            animate={{
+              scale: [1.08, 1.14, 1.08],
+              y: [0, -16, 0],
+              x: [0, 10, 0],
+            }}
+            transition={{
+              opacity: { duration: 1.15, ease: [0.22, 1, 0.36, 1] },
+              scale: {
+                duration: 22,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.8,
+              },
+              y: {
+                duration: 22,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.8,
+              },
+              x: {
+                duration: 26,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.8,
+              },
+            }}
+          >
+            <Image
+              src="/chima_ojimma.jpeg"
+              alt=""
+              fill
+              priority
+              sizes="(max-width: 640px) 100vw, 55vw"
+              className="object-cover object-top opacity-[0.18] grayscale sm:opacity-30 dark:opacity-[0.22] dark:sm:opacity-25"
+            />
+          </motion.div>
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/20 sm:bg-gradient-to-l sm:from-transparent sm:via-background/40 sm:to-background" />
         </div>
       </motion.div>

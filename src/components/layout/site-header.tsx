@@ -34,7 +34,7 @@ export default function SiteHeader() {
           href="/"
           className="font-display text-base font-semibold tracking-tight text-ink sm:text-lg"
         >
-          CP
+          CO
           <span className="text-accent">.</span>
         </Link>
 
