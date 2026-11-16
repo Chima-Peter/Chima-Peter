@@ -33,8 +33,6 @@ I work most at the intersection of reliability and product impact: clear APIs, d
 
 ### [EasySpecs.ai](https://easyspecs.ai) - [Extension](https://open-vsx.org/extension/easyspecs/easyspecs-ai) - [CLI](https://www.npmjs.com/package/@gluecharm-lab/easyspecs-cli)
 
-![EasySpecs.ai](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/easyspecs.webp)
-
 **Problem:** Writing software requirements is tedious and often skipped, and docs that do exist drift away from the codebase.
 
 **Solution:** Built a web app, CLI, and IDE extension that keep specs beside the code - with AI help to draft and update them, Jira sync, and cloud sharing across the team.
@@ -44,8 +42,6 @@ I work most at the intersection of reliability and product impact: clear APIs, d
 ---
 
 ### [ADI Camping](https://adicamping.com)
-
-![ADI Camping](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/adi-camping.webp)
 
 **Problem:** Campground operators juggled bookings by hand across properties, which led to double bookings, missed payments, and gaps with guests.
 
@@ -57,8 +53,6 @@ I work most at the intersection of reliability and product impact: clear APIs, d
 
 ### [ManomPay](https://manomsolutions.com)
 
-![ManomPay](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/manom.webp)
-
 **Problem:** SMEs and freelancers split invoices, payments, and expenses across tools, so cash flow was hard to see.
 
 **Solution:** Built the NestJS backend for invoices, payments, expenses, and cash-flow - with Paystack and crypto checkout, background jobs, and automatic reminders.
@@ -69,8 +63,6 @@ I work most at the intersection of reliability and product impact: clear APIs, d
 
 ### Dukka - [Backend](https://github.com/Chima-Peter/Dukka) · [Storefront](https://github.com/Chima-Peter/dukka_store)
 
-![Dukka](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/dukka.webp)
-
 **Problem:** Selling across African markets needs local catalogs, currency pricing, and reliable checkout - not a one-size-fits-all store.
 
 **Solution:** Built an API and storefront for multi-market shopping: local catalogs and prices, cart and checkout, payments, and order fulfillment for customers and staff.
@@ -80,8 +72,6 @@ I work most at the intersection of reliability and product impact: clear APIs, d
 ---
 
 ### StudyBuddy - [Backend](https://github.com/Chima-Peter/study_buddy) · [Frontend](https://github.com/Chima-Peter/study_buddy_app)
-
-![StudyBuddy](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/studybuddy.webp)
 
 **Problem:** Students bounce between notes, tutoring, and quizzes that aren’t tied to their own course materials.
 
@@ -102,8 +92,6 @@ I work most at the intersection of reliability and product impact: clear APIs, d
 ---
 
 ### [Tales of Logistics](https://talesoflogistics.com)
-
-![Tales of Logistics](https://raw.githubusercontent.com/Chima-Peter/Chima-Peter/main/public/projects/tales-of-logistics.webp)
 
 **Problem:** Needed a public place to publish podcasts, videos, and articles with basic moderation and contact forms.
 
