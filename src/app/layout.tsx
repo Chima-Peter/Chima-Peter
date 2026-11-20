@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://chima-peter.vercel.app/"),
   title: "Chima Ojimma - Backend Engineer",
   description:
-    "Backend Engineer with 4+ years building scalable backend systems, distributed services, and AI infrastructure. Specialized in Python, TypeScript, FastAPI, NestJS, and AWS.",
+    "Backend Engineer experienced in building scalable backend systems, distributed services, and AI infrastructure. Specialized in Python, TypeScript, FastAPI, NestJS, and AWS.",
   openGraph: {
     title: "Chima Ojimma - Backend Engineer",
     description:

@@ -17,7 +17,7 @@ export default function About() {
           <h2 className="section-heading">About</h2>
           <div className="space-y-4 prose-body">
             <p>
-              Backend engineer with 4+ years architecting production-grade
+              Backend engineer experienced in architecting production-grade
               systems, distributed services, and AI-powered applications across
               fintech, SaaS, and developer tooling.
             </p>

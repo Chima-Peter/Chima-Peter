@@ -23,8 +23,8 @@ const roles: Role[] = [
   },
   {
     company: "Manom",
-    title: "Backend & DevOps Engineer",
-    period: "Apr 2023 - Sep 2025",
+    title: "Backend Engineer",
+    period: "Jul 2024 - Sep 2025",
   },
   {
     company: "Freelance",
