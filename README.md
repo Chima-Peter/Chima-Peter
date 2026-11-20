@@ -8,7 +8,7 @@
 
 ## About
 
-Backend engineer with 4+ years architecting production-grade systems, distributed services, and AI-powered applications across fintech, SaaS, and developer tooling.
+Backend engineer with experience architecting production-grade systems, distributed services, and AI-powered applications across fintech, SaaS, and developer tooling.
 
 I work most at the intersection of reliability and product impact: clear APIs, durable pipelines, and infrastructure you can operate without guesswork. Recent focus spans developer tooling (**EasySpecs**), camping SaaS (**ADI Camping**), fintech (**ManomPay**), and commerce (**Dukka**).
 
